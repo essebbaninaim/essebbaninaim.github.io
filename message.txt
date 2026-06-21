@@ -1,7 +1,0 @@
-I'm a final-year PhD researcher in AI (NLP & LLMs) at CRIL, defending in October 2026, and a software engineer by training (2 years at CGI). I design, train and evaluate Transformer-based foundation models end-to-end — from data pipeline to large-scale experiments on HPC clusters (PyTorch, DeepSpeed).
-
-What draws me to Neuralk is the chance to push foundation models into a domain — structured/tabular data — where the research is still wide open. My work on representation learning, embeddings and transfer learning in NLP maps directly onto the core challenges of tabular foundation models, and I'm excited to bring that perspective to a focused, research-driven team.
-
-My research has been recognized at the field's most selective venues, with 4 accepted papers — ICML 2026 (Spotlight), ACL 2025, LREC 2026 and ECAI 2024 — plus 3 more under review (1 at NeurIPS, 2 in ARR).
-
-Beyond publishing, my engineering background means I care about shipping research into real products — exactly the research-to-impact bridge the role calls for. I'd be glad to discuss how I can contribute to Neuralk's tabular foundation model.
