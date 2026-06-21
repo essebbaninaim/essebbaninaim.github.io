@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naïm Es-Sebbani — PhD in AI</title>
+    <title>Naïm Es-Sebbani — Ingénieur IA/ML</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -87,6 +86,7 @@
         .stagger > *:nth-child(3) { transition-delay: 200ms; }
         .stagger > *:nth-child(4) { transition-delay: 300ms; }
         .stagger > *:nth-child(5) { transition-delay: 400ms; }
+        .stagger > *:nth-child(6) { transition-delay: 500ms; }
 
         /* Hero text animation */
         @keyframes slideUp {
@@ -97,13 +97,6 @@
         .hero-anim-2 { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
         .hero-anim-3 { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both; }
         .hero-anim-4 { animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both; }
-
-        /* Skill bar animation */
-        .skill-bar {
-            width: 0;
-            transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .skill-bar.visible { width: var(--w); }
 
         /* Card lift */
         .card-lift {
@@ -120,19 +113,6 @@
         /* Nav shrink on scroll */
         nav.scrolled { box-shadow: 0 2px 20px rgba(10,25,41,0.08); }
 
-        /* Language button */
-        .lang-btn {
-            cursor: pointer;
-            background: none;
-            border: 1px solid rgba(130,154,177,0.4);
-            border-radius: 2px;
-            line-height: 1;
-        }
-        .lang-btn:hover {
-            border-color: rgba(255,255,255,0.6);
-            color: white;
-        }
-
         @media print { nav, .hero-bg { display: none !important; } }
     </style>
 </head>
@@ -143,28 +123,12 @@
         <div class="max-w-6xl mx-auto px-6 h-14 flex justify-between items-center">
             <a href="#top" class="font-bold text-white tracking-tight no-underline text-sm">N. Es-Sebbani</a>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#parcours" data-i18n="nav_parcours" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Background</a>
-                <a href="#enseignement" data-i18n="nav_enseignement" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Teaching</a>
-                <a href="#publications" data-i18n="nav_publications" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Publications</a>
-                <a href="#colloques" data-i18n="nav_colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Conferences</a>
-                <a href="#service" data-i18n="nav_service" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Service</a>
-                <a href="#projets" data-i18n="nav_projets" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Projects</a>
-                <div class="relative lang-dropdown">
-                    <button onclick="toggleLangMenu(this)" class="flex items-center gap-1.5 text-[11px] font-bold tracking-wider text-navy-300 hover:text-white border border-navy-700 px-2.5 py-1.5 transition">
-                        <span class="fi fi-gb fis lang-flag" style="font-size:13px;border-radius:2px"></span>
-                        <span class="lang-code">EN</span>
-                        <svg class="w-2.5 h-2.5 ml-0.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
-                    <div class="lang-menu hidden absolute right-0 top-full mt-1.5 bg-navy-900 border border-navy-700 shadow-xl z-50 py-1 min-w-[80px]">
-                        <button onclick="applyLanguage('fr'); closeLangMenus()" data-lang-item="fr" class="flex items-center gap-2 w-full px-3 py-2 text-[11px] font-bold tracking-wider text-navy-300 hover:text-white hover:bg-navy-800 transition">
-                            <span class="fi fi-fr fis" style="font-size:13px;border-radius:2px"></span> FR
-                        </button>
-                        <button onclick="applyLanguage('en'); closeLangMenus()" data-lang-item="en" class="flex items-center gap-2 w-full px-3 py-2 text-[11px] font-bold tracking-wider text-navy-300 hover:text-white hover:bg-navy-800 transition">
-                            <span class="fi fi-gb fis" style="font-size:13px;border-radius:2px"></span> EN
-                        </button>
-                    </div>
-                </div>
-                <a href="#contact" data-i18n="nav_contact" class="text-[13px] font-semibold text-navy-950 bg-white px-5 py-1.5 hover:bg-navy-100 no-underline transition">Contact</a>
+                <a href="#parcours" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Parcours</a>
+                <a href="#competences" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Compétences</a>
+                <a href="#publications" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Publications</a>
+                <a href="#colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Colloques</a>
+                <a href="#projets" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Projets</a>
+                <a href="#contact" class="text-[13px] font-semibold text-navy-950 bg-white px-5 py-1.5 hover:bg-navy-100 no-underline transition">Contact</a>
             </div>
             <button class="md:hidden" id="navToggle">
                 <span class="block w-5 h-0.5 bg-white mb-1.5"></span>
@@ -173,29 +137,14 @@
             </button>
         </div>
         <div class="hidden flex-col items-center gap-4 pb-5 bg-navy-950 md:hidden" id="mobileMenu">
-            <a href="#parcours" data-i18n="nav_parcours" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Background</a>
-            <a href="#enseignement" data-i18n="nav_enseignement" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Teaching</a>
-            <a href="#competences" data-i18n="nav_competences" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Skills</a>
-            <a href="#publications" data-i18n="nav_publications" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Publications</a>
-            <a href="#colloques" data-i18n="nav_colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Conferences</a>
-            <a href="#service" data-i18n="nav_service" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Service</a>
-            <a href="#projets" data-i18n="nav_projets" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Projects</a>
-            <a href="#contact" data-i18n="nav_contact" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Contact</a>
-            <div class="relative lang-dropdown">
-                <button onclick="toggleLangMenu(this)" class="flex items-center gap-2 text-[12px] font-bold tracking-wider text-navy-300 hover:text-white border border-navy-700 px-3 py-2 transition">
-                    <span class="fi fi-gb fis lang-flag" style="font-size:15px;border-radius:2px"></span>
-                    <span class="lang-code">EN</span>
-                    <svg class="w-3 h-3 ml-0.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="lang-menu hidden absolute left-1/2 -translate-x-1/2 top-full mt-1.5 bg-navy-900 border border-navy-700 shadow-xl z-50 py-1 min-w-[80px]">
-                    <button onclick="applyLanguage('fr'); closeLangMenus(); closeMobile();" data-lang-item="fr" class="flex items-center gap-2 w-full px-3 py-2 text-[12px] font-bold tracking-wider text-navy-300 hover:text-white hover:bg-navy-800 transition">
-                        <span class="fi fi-fr fis" style="font-size:14px;border-radius:2px"></span> FR
-                    </button>
-                    <button onclick="applyLanguage('en'); closeLangMenus(); closeMobile();" data-lang-item="en" class="flex items-center gap-2 w-full px-3 py-2 text-[12px] font-bold tracking-wider text-navy-300 hover:text-white hover:bg-navy-800 transition">
-                        <span class="fi fi-gb fis" style="font-size:14px;border-radius:2px"></span> EN
-                    </button>
-                </div>
-            </div>
+            <a href="#parcours" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Parcours</a>
+            <a href="#competences" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Compétences</a>
+            <a href="#enseignement" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Enseignement</a>
+            <a href="#publications" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Publications</a>
+            <a href="#colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Colloques</a>
+            <a href="#service" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Service</a>
+            <a href="#projets" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Projets</a>
+            <a href="#contact" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Contact</a>
         </div>
     </nav>
 
@@ -211,23 +160,23 @@
             <div class="flex flex-col md:flex-row gap-10 items-center">
                 <!-- Photo -->
                 <div class="w-40 h-52 bg-navy-800 border-2 border-navy-600 overflow-hidden flex-shrink-0 hero-anim-1 shadow-2xl">
-                    <img src="photo2.jpg" alt="Naïm Es-Sebbani" class="w-full h-full object-cover" style="object-position: center 15%; transform: scale(1.5); transform-origin: center 20%">
+                    <img src="moi_hero.png" alt="Naïm Es-Sebbani" class="w-full h-full object-cover object-center">
                 </div>
                 <!-- Text -->
                 <div class="text-center md:text-left">
-                    <p data-i18n="hero_subtitle" class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-3 hero-anim-1">PhD in Artificial Intelligence</p>
+                    <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-3 hero-anim-1">Ingénieur IA/ML · Docteur en Intelligence Artificielle</p>
                     <h1 class="font-display text-5xl md:text-6xl font-800 text-white leading-none tracking-tight hero-anim-2">
                         Naïm<br>Es-Sebbani
                     </h1>
-                    <p data-i18n="hero_bio" class="text-navy-300 mt-5 text-base leading-relaxed max-w-lg hero-anim-3">
-                        Researcher specializing in natural language processing, semantic modeling and bias mitigation in LLMs.
+                    <p class="text-navy-300 mt-5 text-base leading-relaxed max-w-xl hero-anim-3">
+                        Docteur en IA (NLP &amp; LLM) et ingénieur logiciel de formation. Je conçois, entraîne et déploie des systèmes LLM/NLP de bout en bout, du pipeline de données au produit livré. Premier auteur à ICML et ACL.
                     </p>
                     <div class="flex items-center gap-4 mt-7 flex-wrap justify-center md:justify-start hero-anim-4">
-                        <a href="CV.pdf" target="_blank" data-i18n="hero_cv" class="text-[13px] font-semibold bg-white text-navy-950 px-6 py-2.5 hover:bg-navy-100 no-underline transition">Download my CV</a>
-                        <a href="mailto:naim.essebbani@gmail.com" data-i18n="hero_contact" class="text-[13px] font-semibold text-white border border-white/30 px-6 py-2.5 hover:border-white hover:bg-white/10 no-underline transition">Contact me</a>
+                        <a href="CV.pdf" target="_blank" class="text-[13px] font-semibold bg-white text-navy-950 px-6 py-2.5 hover:bg-navy-100 no-underline transition">Télécharger mon CV</a>
+                        <a href="mailto:naim.essebbani@gmail.com" class="text-[13px] font-semibold text-white border border-white/30 px-6 py-2.5 hover:border-white hover:bg-white/10 no-underline transition">Me contacter</a>
                         <span class="flex items-center gap-2 text-[13px] font-semibold text-emerald-400">
                             <span class="w-2 h-2 bg-emerald-400 rounded-full pulse-dot"></span>
-                            <span data-i18n="hero_available">Available</span>
+                            <span>Disponible · Lille</span>
                         </span>
                     </div>
                 </div>
@@ -241,8 +190,8 @@
         <!-- ══════ PARCOURS ══════ -->
         <section class="py-20 bg-white" id="parcours">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_parcours_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">My background</p>
-                <h2 data-i18n="section_parcours_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Education & Experience</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Mon parcours</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Formation &amp; Expérience</h2>
 
                 <div class="space-y-0 stagger">
                     <!-- Doctorat -->
@@ -253,14 +202,14 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-white bg-navy-900 px-3 py-1 mb-2">2023 – 2026</span>
-                            <h3 data-i18n="phd_title" class="text-lg font-bold text-navy-900">PhD in Artificial Intelligence</h3>
-                            <p data-i18n="phd_institution" class="text-sm text-navy-400 mt-0.5">CRIL — University of Artois, Lens</p>
-                            <p data-i18n="phd_desc" class="text-sm text-navy-600 mt-2 leading-relaxed max-w-lg">
-                                Thesis: "Modelling Relational Knowledge". Supervisor: Zied Bouraoui · Labs: CRIL &amp; Grammatica · Expected: October 2026.
+                            <h3 class="text-lg font-bold text-navy-900">Chercheur doctorant en IA</h3>
+                            <p class="text-sm text-navy-400 mt-0.5">CRIL — Centre de Recherche en Informatique de Lens, Université d'Artois</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                                Conception, entraînement et évaluation de systèmes LLM/NLP de bout en bout, en autonomie — du pipeline de données aux expériences à grande échelle. Thèse « Modeling Relational Knowledge in Language, Reasoning, and Learning », dirigée par Zied Bouraoui. Labos : CRIL &amp; Grammatica · Soutenance prévue : octobre 2026.
                             </p>
                         </div>
                     </div>
-                    <!-- Master -->
+                    <!-- Master / CGI -->
                     <div class="flex gap-6 md:gap-10 reveal-left">
                         <div class="flex flex-col items-center">
                             <div class="w-4 h-4 rounded-full bg-white border-4 border-navy-300 mt-1.5 shrink-0 z-10"></div>
@@ -268,10 +217,10 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2021 – 2023</span>
-                            <h3 data-i18n="master_title" class="text-lg font-bold text-navy-900">Master's in Software Engineering</h3>
-                            <p data-i18n="master_institution" class="text-sm text-navy-400 mt-0.5">University of Artois, Lens</p>
-                            <p data-i18n-html="master_desc" class="text-sm text-navy-600 mt-2 leading-relaxed max-w-lg">
-                                Work-study program at <span class="font-bold text-navy-900">CGI</span> — industrial process automation.
+                            <h3 class="text-lg font-bold text-navy-900">Ingénieur logiciel en alternance · Master Ingénierie Logicielle</h3>
+                            <p class="text-sm text-navy-400 mt-0.5"><span class="font-bold text-navy-900">CGI</span> · Université d'Artois</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                                Deux ans de contribution au développement et à la maintenance d'une application métier en production, tout en automatisant des processus récurrents pour alléger le travail des équipes.
                             </p>
                         </div>
                     </div>
@@ -283,10 +232,10 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2020 – 2021</span>
-                            <h3 data-i18n="licence_title" class="text-lg font-bold text-navy-900">Bachelor's in Computer Science</h3>
-                            <p data-i18n="licence_institution" class="text-sm text-navy-400 mt-0.5">University of Artois, Lens</p>
-                            <p data-i18n="licence_desc" class="text-sm text-navy-600 mt-2 leading-relaxed max-w-lg">
-                                Internship at the Lens Mathematics Laboratory: monocular 3D reconstruction for remote photoplethysmography.
+                            <h3 class="text-lg font-bold text-navy-900">Licence Informatique</h3>
+                            <p class="text-sm text-navy-400 mt-0.5">Université d'Artois, Lens</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                                Stage au Laboratoire de Mathématiques de Lens : reconstruction 3D monoculaire pour la photopléthysmographie à distance.
                             </p>
                         </div>
                     </div>
@@ -297,8 +246,82 @@
                         </div>
                         <div>
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2018 – 2020</span>
-                            <h3 data-i18n="dut_title" class="text-lg font-bold text-navy-900">DUT in Computer Science</h3>
-                            <p data-i18n="dut_institution" class="text-sm text-navy-400 mt-0.5">IUT de Lens</p>
+                            <h3 class="text-lg font-bold text-navy-900">DUT Informatique</h3>
+                            <p class="text-sm text-navy-400 mt-0.5">IUT de Lens</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════ COMPÉTENCES ══════ -->
+        <section class="py-20 bg-navy-50" id="competences">
+            <div class="max-w-5xl mx-auto px-6">
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Savoir-faire</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Compétences techniques</h2>
+
+                <div class="grid sm:grid-cols-2 gap-5 stagger">
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">NLP / LLM</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Fine-tuning</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">RAG (LangChain, LlamaIndex, FAISS)</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">RLHF</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Embeddings</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Graphes de connaissances</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Mitigation de biais</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">ML / Deep Learning</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">PyTorch</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Hugging Face (Transformers)</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">DeepSpeed</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">scikit-learn</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">NumPy</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">pandas</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">MLOps / Outils</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Git</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Docker</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">FastAPI</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">CI/CD</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Linux</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">HPC</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Développement logiciel</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Angular</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">React</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Next.js</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">JEE</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Jenkins</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">API REST</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Langages</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Python</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">C</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Java</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">SQL</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Bash</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Cloud &amp; Langues</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Modal</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">AWS</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Français (natif)</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Anglais (courant)</span>
                         </div>
                     </div>
                 </div>
@@ -306,24 +329,24 @@
         </section>
 
         <!-- ══════ ENSEIGNEMENT ══════ -->
-        <section class="py-20 bg-navy-50" id="enseignement">
+        <section class="py-20 bg-white" id="enseignement">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_enseignement_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Academia</p>
-                <h2 data-i18n="section_enseignement_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Teaching Experience</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Académique</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Expérience d'enseignement</h2>
 
-                <div class="bg-white border border-navy-100 p-7 card-lift reveal">
+                <div class="bg-navy-50 border border-navy-100 p-7 card-lift reveal">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div>
-                            <h3 class="text-base font-bold text-navy-900">University of Artois — Jean Perrin Faculty</h3>
-                            <p data-i18n="teaching_role" class="text-sm text-navy-500 mt-0.5 italic">Teaching Assistant</p>
+                            <h3 class="text-base font-bold text-navy-900">Université d'Artois — Faculté Jean Perrin</h3>
+                            <p class="text-sm text-navy-500 mt-0.5 italic">Chargé de TD/TP</p>
                             <div class="mt-5 space-y-3">
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p data-i18n="teaching_algo" class="text-sm text-navy-600">Algorithmics 2, L1 (2nd semester) — 128 hours</p>
+                                    <p class="text-sm text-navy-600">Algorithmique 2, L1 (2<sup>e</sup> semestre) — 128 heures</p>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p data-i18n="teaching_dl" class="text-sm text-navy-600">Practical Deep Learning, M.Sc. 2 — 20 hours</p>
+                                    <p class="text-sm text-navy-600">Deep Learning appliqué, M2 — 20 heures</p>
                                 </div>
                             </div>
                         </div>
@@ -334,34 +357,69 @@
         </section>
 
         <!-- ══════ PUBLICATIONS ══════ -->
-        <section class="py-20 bg-white" id="publications">
+        <section class="py-20 bg-navy-50" id="publications">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_publications_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Research</p>
-                <h2 data-i18n="section_publications_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Publications</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Recherche</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Publications</h2>
 
                 <div id="pub-list">
-                    <p data-i18n="publications_loading" class="text-sm text-navy-400 text-center py-8">Loading publications…</p>
+                    <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5">ICML 2026</span>
+                            <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2.5 py-0.5">Spotlight</span>
+                        </div>
+                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Evaluating Robustness of Reasoning Models on Parameterized Logical Problems</p>
+                        <p class="text-[13px] text-navy-500 mt-1.5"><span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Esteban Marquer, Yakoub Salhi, Zied Bouraoui</p>
+                        <p class="text-[12px] text-navy-400 mt-0.5">International Conference on Machine Learning, 2026.</p>
+                    </div>
+                    <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">LREC 2026</span>
+                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Learning Long-Document Embeddings via Chunk-Context Entailment</p>
+                        <p class="text-[13px] text-navy-500 mt-1.5">Waheed Ahmed Abro, <span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Zied Bouraoui</p>
+                        <p class="text-[12px] text-navy-400 mt-0.5">Language Resources and Evaluation Conference, 2026.</p>
+                    </div>
+                    <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ACL 2025</span>
+                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Modeling Complex Semantic Relations with Contrastively Fine-Tuned Relational Encoders</p>
+                        <p class="text-[13px] text-navy-500 mt-1.5"><span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Esteban Marquer, Zied Bouraoui</p>
+                        <p class="text-[12px] text-navy-400 mt-0.5">63rd Annual Meeting of the ACL, pp. 20259–20288, 2025.</p>
+                    </div>
+                    <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ECAI 2024</span>
+                        <p class="text-[15px] font-bold text-navy-900 leading-snug">REFINE-LM: Mitigating Language Model Stereotypes via Reinforcement Learning</p>
+                        <p class="text-[13px] text-navy-500 mt-1.5">Rameez Qureshi, <span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Luis Galárraga, Yvette Graham, Miguel Couceiro, Zied Bouraoui</p>
+                        <p class="text-[12px] text-navy-400 mt-0.5">27th European Conference on Artificial Intelligence, vol. 392, pp. 4027–4034, 2024.</p>
+                    </div>
                 </div>
 
+                <p class="text-sm text-navy-500 mt-2 reveal">+ 4 articles en cours d'évaluation (<span class="italic">under review</span>).</p>
+
                 <!-- Posters -->
-                <h3 data-i18n="publications_posters" class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-16 mb-6 reveal">Posters</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 stagger">
+                <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-16 mb-6 reveal">Posters</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 stagger">
+                    <a href="poster/ICML_26.pdf" target="_blank" class="group no-underline card-lift reveal-scale">
+                        <div class="aspect-[3/4] bg-white border border-navy-100 overflow-hidden mb-3">
+                            <embed src="poster/ICML_26.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" class="w-full h-full poster-embed">
+                        </div>
+                        <p class="text-sm font-bold text-navy-900 group-hover:text-navy-600 transition">Reasoning Models Robustness</p>
+                        <p class="text-[12px] text-navy-400">ICML 2026</p>
+                    </a>
                     <a href="poster/ECAI_25.pdf" target="_blank" class="group no-underline card-lift reveal-scale">
-                        <div class="aspect-[3/4] bg-navy-50 border border-navy-100 overflow-hidden mb-3">
+                        <div class="aspect-[3/4] bg-white border border-navy-100 overflow-hidden mb-3">
                             <embed src="poster/ECAI_25.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" class="w-full h-full poster-embed">
                         </div>
                         <p class="text-sm font-bold text-navy-900 group-hover:text-navy-600 transition">REFINE-LM</p>
                         <p class="text-[12px] text-navy-400">ECAI 2024</p>
                     </a>
                     <a href="poster/ACL_25.pdf" target="_blank" class="group no-underline card-lift reveal-scale">
-                        <div class="aspect-[3/4] bg-navy-50 border border-navy-100 overflow-hidden mb-3">
+                        <div class="aspect-[3/4] bg-white border border-navy-100 overflow-hidden mb-3">
                             <embed src="poster/ACL_25.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" class="w-full h-full poster-embed">
                         </div>
-                        <p class="text-sm font-bold text-navy-900 group-hover:text-navy-600 transition">Modelling Complex Relations</p>
+                        <p class="text-sm font-bold text-navy-900 group-hover:text-navy-600 transition">Modeling Complex Relations</p>
                         <p class="text-[12px] text-navy-400">ACL 2025</p>
                     </a>
                     <a href="poster/LREC_26.pdf" target="_blank" class="group no-underline card-lift reveal-scale">
-                        <div class="aspect-[3/4] bg-navy-50 border border-navy-100 overflow-hidden mb-3">
+                        <div class="aspect-[3/4] bg-white border border-navy-100 overflow-hidden mb-3">
                             <embed src="poster/LREC_26.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf" class="w-full h-full poster-embed">
                         </div>
                         <p class="text-sm font-bold text-navy-900 group-hover:text-navy-600 transition">Long-Document Embeddings</p>
@@ -372,45 +430,45 @@
         </section>
 
         <!-- ══════ COLLOQUES ══════ -->
-        <section class="py-20 bg-navy-50" id="colloques">
+        <section class="py-20 bg-white" id="colloques">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_colloques_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Presentations</p>
-                <h2 data-i18n="section_colloques_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Conferences & Presentations</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Présentations</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Colloques &amp; Conférences</h2>
 
                 <div class="space-y-0 divide-y divide-navy-200">
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
                         <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ICML 2026 — International Conference on Machine Learning</p>
-                            <p data-i18n="conf_icml_details" class="text-sm text-navy-400">Upcoming · Oral presentation</p>
+                            <p class="text-sm text-navy-400">À venir · Présentation orale</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
                         <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">LREC 2026 — Language Resources and Evaluation Conference</p>
-                            <p data-i18n="conf_lrec_details" class="text-sm text-navy-400">Poster presentation</p>
+                            <p class="text-sm text-navy-400">Présentation de poster</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span data-i18n="conf_acl_date" class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Jul. 2025</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juil. 2025</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ACL 2025 — Annual Meeting of the ACL</p>
-                            <p data-i18n="conf_acl_details" class="text-sm text-navy-400">Vienna, Austria · Oral presentation</p>
+                            <p class="text-sm text-navy-400">Vienne, Autriche · Présentation orale</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span data-i18n="conf_ecai_date" class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Oct. 2024</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Oct. 2024</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ECAI 2024 — European Conference on Artificial Intelligence</p>
-                            <p data-i18n="conf_ecai_details" class="text-sm text-navy-400">Santiago de Compostela, Spain · Poster presentation</p>
+                            <p class="text-sm text-navy-400">Saint-Jacques-de-Compostelle, Espagne · Présentation de poster</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
                         <span class="text-[13px] font-bold text-navy-400 italic md:w-24 shrink-0">2026</span>
                         <div>
-                            <p class="text-[15px] font-semibold text-navy-600">JDD CRIL &amp; PhD Days — Thesis Presentations</p>
-                            <p data-i18n="conf_jdd_details" class="text-sm text-navy-400">CRIL Laboratory · Internal presentation</p>
+                            <p class="text-[15px] font-semibold text-navy-600">JDD CRIL &amp; PhD Days — Présentations de thèse</p>
+                            <p class="text-sm text-navy-400">Laboratoire CRIL · Présentation interne</p>
                         </div>
                     </div>
                 </div>
@@ -418,44 +476,44 @@
         </section>
 
         <!-- ══════ SERVICE ACADÉMIQUE ══════ -->
-        <section class="py-20 bg-white" id="service">
+        <section class="py-20 bg-navy-50" id="service">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_service_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Community</p>
-                <h2 data-i18n="section_service_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Academic Service</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Communauté</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Service académique</h2>
 
                 <div class="space-y-5">
-                    <div class="bg-navy-50 border border-navy-100 p-6 card-lift reveal">
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
                             <div>
-                                <p class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-1">University of Artois · France</p>
-                                <h3 data-i18n="service_trainer_title" class="text-base font-bold text-navy-900">Invited Trainer</h3>
-                                <p data-i18n="service_trainer_desc" class="text-sm text-navy-600 mt-1 max-w-lg">Organised and delivered a training workshop on Large Language Models (LLMs) for faculty members.</p>
+                                <p class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-1">Université d'Artois · France</p>
+                                <h3 class="text-base font-bold text-navy-900">Formateur invité</h3>
+                                <p class="text-sm text-navy-600 mt-1 max-w-lg">Organisation et animation d'un atelier de formation sur les grands modèles de langage (LLMs) pour les enseignants-chercheurs.</p>
                             </div>
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 shrink-0">2025 – 2026</span>
                         </div>
                     </div>
 
-                    <div class="bg-navy-50 border border-navy-100 p-6 card-lift reveal">
-                        <h3 data-i18n="service_org_title" class="text-base font-bold text-navy-900 mb-3">Organisation of Scientific Meetings</h3>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-base font-bold text-navy-900 mb-3">Organisation de réunions scientifiques</h3>
                         <div class="space-y-2">
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Co-organisation of scientific activities within the <span class="font-semibold text-navy-800">IA2</span> research group <span class="text-navy-400">(2025–Present)</span></p>
+                                <p class="text-sm text-navy-600">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IA2</span> <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Co-organisation of scientific activities within the <span class="font-semibold text-navy-800">IARML</span> research group <span class="text-navy-400">(2025–Present)</span></p>
+                                <p class="text-sm text-navy-600">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IARML</span> <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Participation in seminars, workshops and research meetings at CRIL laboratory <span class="text-navy-400">(2025–Present)</span></p>
+                                <p class="text-sm text-navy-600">Participation aux séminaires, ateliers et réunions de recherche du laboratoire CRIL <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-navy-50 border border-navy-100 p-6 card-lift reveal">
-                        <h3 data-i18n="service_review_title" class="text-base font-bold text-navy-900 mb-1">Reviewing</h3>
-                        <p data-i18n="service_review_desc" class="text-sm text-navy-600">Occasional reviewer for the <span class="italic">European Journal of Artificial Intelligence</span>.</p>
+                    <div class="bg-white border border-navy-100 p-6 card-lift reveal">
+                        <h3 class="text-base font-bold text-navy-900 mb-1">Relecture</h3>
+                        <p class="text-sm text-navy-600">Relecteur occasionnel pour le <span class="italic">European Journal of Artificial Intelligence</span>.</p>
                     </div>
                 </div>
             </div>
@@ -464,29 +522,30 @@
         <!-- ══════ PROJETS ══════ -->
         <section class="py-20 bg-white" id="projets">
             <div class="max-w-5xl mx-auto px-6">
-                <p data-i18n="section_projets_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Projects</p>
-                <h2 data-i18n="section_projets_title" class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Projects</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Réalisations</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Projets</h2>
 
                 <div class="grid md:grid-cols-2 gap-5">
-                    <a href="https://biasinai.github.io/refinedemo/" target="_blank" class="group block bg-navy-950 p-7 no-underline card-lift reveal-scale">
-                        <span data-i18n="project_tag_demo" class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Interactive demo</span>
+                    <a href="https://biasinai.github.io/refinelm/" target="_blank" class="group block bg-navy-950 p-7 no-underline card-lift reveal-scale">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Démo interactive</span>
                         <h3 class="text-lg font-bold text-white group-hover:text-navy-200 transition">REFINE-LM</h3>
-                        <p data-i18n="project_refine_desc" class="text-sm text-navy-300 mt-2 leading-relaxed">
-                            LLM debiasing demo via reinforcement learning. Comparison on BERT, RoBERTa, Llama, Mistral.
+                        <p class="text-sm text-navy-300 mt-2 leading-relaxed">
+                            Démo de débiaisage des LLMs par apprentissage par renforcement. Comparaison sur BERT, RoBERTa, Llama, Mistral.
                         </p>
-                        <span data-i18n="project_see_demo" class="inline-block mt-4 text-[12px] font-semibold text-white border-b border-white/30 group-hover:border-white transition">See the demo →</span>
+                        <span class="inline-block mt-4 text-[12px] font-semibold text-white border-b border-white/30 group-hover:border-white transition">Voir la démo →</span>
                     </a>
-		
-		    <!--
-                    <a href="https://essebbaninaim.github.io/argumentative-reasoning/" target="_blank" class="group block bg-navy-900 p-7 no-underline card-lift reveal-scale">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Dashboard</span>
-                        <h3 class="text-lg font-bold text-white group-hover:text-navy-200 transition">ArgumentTree</h3>
-                        <p data-i18n="project_arg_desc" class="text-sm text-navy-300 mt-2 leading-relaxed">
-                            Interactive dashboard to explore a QA system based on argumentative trees.
+
+                    <a href="https://github.com/essebbaninaim" target="_blank" class="group block bg-navy-900 p-7 no-underline card-lift reveal-scale">
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Code &amp; modèles</span>
+                        <h3 class="text-lg font-bold text-white group-hover:text-navy-200 transition">GitHub &amp; Hugging Face</h3>
+                        <p class="text-sm text-navy-300 mt-2 leading-relaxed">
+                            Implémentations, expériences et modèles entraînés autour de mes travaux NLP/LLM, en open source.
                         </p>
-                        <span data-i18n="project_see_demo" class="inline-block mt-4 text-[12px] font-semibold text-white border-b border-white/30 group-hover:border-white transition">See the demo →</span>
+                        <span class="inline-flex flex-wrap gap-x-4 gap-y-1 mt-4 text-[12px] font-semibold text-white">
+                            <span class="border-b border-white/30 group-hover:border-white transition">github.com/essebbaninaim →</span>
+                            <a href="https://huggingface.co/Naimmm" target="_blank" class="text-white border-b border-white/30 hover:border-white no-underline transition">huggingface.co/Naimmm →</a>
+                        </span>
                     </a>
-		   -->
                 </div>
             </div>
         </section>
@@ -494,12 +553,19 @@
         <!-- ══════ CONTACT ══════ -->
         <section class="py-20 bg-navy-950 text-white" id="contact">
             <div class="max-w-5xl mx-auto px-6 text-center">
-                <p data-i18n="section_contact_label" class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Available</p>
-                <h2 data-i18n="section_contact_title" class="font-display text-3xl font-700 text-white mb-4 reveal">Let's work together</h2>
-                <p data-i18n="contact_desc" class="text-navy-300 mb-10 max-w-md mx-auto reveal">Open to a postdoctoral position.</p>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Disponible</p>
+                <h2 class="font-display text-3xl font-700 text-white mb-4 reveal">Travaillons ensemble</h2>
+                <p class="text-navy-300 mb-10 max-w-md mx-auto reveal">Ouvert aux opportunités en IA/ML — de la recherche au produit.</p>
 
                 <a href="mailto:naim.essebbani@gmail.com" class="inline-block text-[15px] font-bold bg-white text-navy-950 px-8 py-3.5 hover:bg-navy-100 no-underline transition reveal">naim.essebbani@gmail.com</a>
 
+                <div class="flex items-center justify-center gap-6 mt-8 text-[13px] text-navy-300 reveal">
+                    <a href="https://github.com/essebbaninaim" target="_blank" class="hover:text-white no-underline transition">GitHub</a>
+                    <span class="text-navy-700">·</span>
+                    <a href="https://huggingface.co/Naimmm" target="_blank" class="hover:text-white no-underline transition">Hugging Face</a>
+                    <span class="text-navy-700">·</span>
+                    <a href="CV.pdf" target="_blank" class="hover:text-white no-underline transition">CV (PDF)</a>
+                </div>
             </div>
         </section>
     </main>
@@ -509,160 +575,6 @@
     </footer>
 
     <script>
-        // ── i18n ──────────────────────────────────────────────────────────────
-        let currentLang = 'en';
-
-        const translations = {
-            "en": {
-                "page_title": "Naïm Es-Sebbani — PhD in AI",
-                "nav_parcours": "Background", "nav_enseignement": "Teaching",
-                "nav_competences": "Skills", "nav_publications": "Publications",
-                "nav_colloques": "Conferences", "nav_service": "Service",
-                "nav_projets": "Projects", "nav_contact": "Contact",
-                "hero_subtitle": "PhD in Artificial Intelligence",
-                "hero_bio": "Researcher specializing in natural language processing, semantic modeling and bias mitigation in LLMs.",
-                "hero_cv": "Download my CV", "hero_contact": "Contact me", "hero_available": "Available",
-                "section_parcours_label": "My background", "section_parcours_title": "Education & Experience",
-                "phd_title": "PhD in Artificial Intelligence", "phd_institution": "CRIL — University of Artois, Lens",
-                "phd_desc": "Thesis: \"Modelling Relational Knowledge\". Supervisor: Zied Bouraoui · Labs: CRIL & Grammatica · Expected: October 2026.",
-                "master_title": "Master's in Software Engineering", "master_institution": "University of Artois, Lens",
-                "master_desc": "Work-study program at <span class=\"font-bold text-navy-900\">CGI</span> — industrial process automation.",
-                "licence_title": "Bachelor's in Computer Science", "licence_institution": "University of Artois, Lens",
-                "licence_desc": "Internship at the Lens Mathematics Laboratory: monocular 3D reconstruction for remote photoplethysmography.",
-                "dut_title": "DUT in Computer Science", "dut_institution": "IUT de Lens",
-                "section_enseignement_label": "Academia", "section_enseignement_title": "Teaching Experience",
-                "teaching_role": "Teaching Assistant",
-                "teaching_algo": "Algorithmics 2, L1 (2nd semester) — 128 hours",
-                "teaching_dl": "Practical Deep Learning, M.Sc. 2 — 20 hours",
-                "section_competences_label": "Expertise", "section_competences_title": "Skills",
-                "skills_research_title": "Research & AI", "skill_expert": "Expert", "skill_advanced": "Advanced",
-                "skill_scientific_writing": "Scientific writing", "skills_tech_title": "Technical",
-                "section_publications_label": "Research", "section_publications_title": "Publications",
-                "publications_loading": "Loading publications…", "publications_posters": "Posters",
-                "section_colloques_label": "Presentations", "section_colloques_title": "Conferences & Presentations",
-                "conf_icml_details": "Upcoming · Oral presentation",
-                "conf_lrec_details": "Poster presentation",
-                "conf_acl_date": "Jul. 2025", "conf_acl_details": "Vienna, Austria · Oral presentation",
-                "conf_ecai_date": "Oct. 2024", "conf_ecai_details": "Santiago de Compostela, Spain · Poster presentation",
-                "conf_jdd_details": "CRIL Laboratory · Internal presentation",
-                "section_service_label": "Community", "section_service_title": "Academic Service",
-                "service_trainer_title": "Invited Trainer",
-                "service_trainer_desc": "Organised and delivered a training workshop on Large Language Models (LLMs) for faculty members.",
-                "service_org_title": "Organisation of Scientific Meetings",
-                "service_review_title": "Reviewing",
-                "service_review_desc": "Occasional reviewer for the European Journal of Artificial Intelligence.",
-                "section_projets_label": "Projects", "section_projets_title": "Projects",
-                "project_tag_demo": "Interactive demo",
-                "project_refine_desc": "LLM debiasing demo via reinforcement learning. Comparison on BERT, RoBERTa, Llama, Mistral.",
-                "project_see_demo": "See the demo →",
-                "project_arg_desc": "Interactive dashboard to explore a QA system based on argumentative trees.",
-                "section_contact_label": "Available", "section_contact_title": "Let's work together",
-                "contact_desc": "Open to a postdoctoral position."
-            },
-            "fr": {
-                "page_title": "Naïm Es-Sebbani — Docteur en IA",
-                "nav_parcours": "Parcours", "nav_enseignement": "Enseignement",
-                "nav_competences": "Compétences", "nav_publications": "Publications",
-                "nav_colloques": "Colloques", "nav_service": "Service",
-                "nav_projets": "Projets", "nav_contact": "Contact",
-                "hero_subtitle": "Docteur en Intelligence Artificielle",
-                "hero_bio": "Chercheur spécialisé en traitement automatique des langues, modélisation sémantique et atténuation des biais dans les LLMs.",
-                "hero_cv": "Télécharger mon CV", "hero_contact": "Me contacter", "hero_available": "Disponible",
-                "section_parcours_label": "Mon parcours", "section_parcours_title": "Formation & Expérience",
-                "phd_title": "Doctorat en Intelligence Artificielle", "phd_institution": "CRIL — Université d'Artois, Lens",
-                "phd_desc": "Thèse : « Modelling Relational Knowledge ». Dir. : Zied Bouraoui · Labos : CRIL & Grammatica · Soutenance prévue : octobre 2026.",
-                "master_title": "Master Ingénierie Logicielle", "master_institution": "Université d'Artois, Lens",
-                "master_desc": "Alternance chez <span class=\"font-bold text-navy-900\">CGI</span> — automatisation de processus industriels.",
-                "licence_title": "Licence Informatique", "licence_institution": "Université d'Artois, Lens",
-                "licence_desc": "Stage au Laboratoire de Mathématiques de Lens : reconstruction 3D monoculaire pour la photopléthysmographie à distance.",
-                "dut_title": "DUT Informatique", "dut_institution": "IUT de Lens",
-                "section_enseignement_label": "Académique", "section_enseignement_title": "Expérience d'enseignement",
-                "teaching_role": "Chargé de TD",
-                "teaching_algo": "Algorithmique 2, L1 (2e semestre) — 128 heures",
-                "teaching_dl": "Deep Learning pratique, M2 — 20 heures",
-                "section_competences_label": "Savoir-faire", "section_competences_title": "Compétences",
-                "skills_research_title": "Recherche & IA", "skill_expert": "Expert", "skill_advanced": "Avancé",
-                "skill_scientific_writing": "Rédaction scientifique", "skills_tech_title": "Technique",
-                "section_publications_label": "Recherche", "section_publications_title": "Publications",
-                "publications_loading": "Chargement des publications…", "publications_posters": "Posters",
-                "section_colloques_label": "Présentations", "section_colloques_title": "Colloques & Conférences",
-                "conf_icml_details": "À venir · Présentation orale",
-                "conf_lrec_details": "Présentation de poster",
-                "conf_acl_date": "Juil. 2025", "conf_acl_details": "Vienne, Autriche · Présentation orale",
-                "conf_ecai_date": "Oct. 2024", "conf_ecai_details": "Santiago de Compostela, Espagne · Présentation de poster",
-                "conf_jdd_details": "Laboratoire CRIL · Présentation interne",
-                "section_service_label": "Communauté", "section_service_title": "Service académique",
-                "service_trainer_title": "Formateur invité",
-                "service_trainer_desc": "Organisation et animation d'un atelier de formation sur les grands modèles de langage (LLMs) pour les enseignants-chercheurs.",
-                "service_org_title": "Organisation de réunions scientifiques",
-                "service_review_title": "Relecture",
-                "service_review_desc": "Relecteur occasionnel pour le European Journal of Artificial Intelligence.",
-                "section_projets_label": "Réalisations", "section_projets_title": "Projets",
-                "project_tag_demo": "Démo interactive",
-                "project_refine_desc": "Démo de débiaisage des LLMs par reinforcement learning. Comparaison sur BERT, RoBERTa, Llama, Mistral.",
-                "project_see_demo": "Voir la démo →",
-                "project_arg_desc": "Dashboard interactif pour explorer un système de QA basé sur des arbres argumentatifs.",
-                "section_contact_label": "Disponible", "section_contact_title": "Travaillons ensemble",
-                "contact_desc": "Ouvert à un poste postdoctoral."
-            }
-        };
-
-        function initI18n() {
-            const stored = localStorage.getItem('lang');
-            applyLanguage(stored === 'fr' ? 'fr' : 'en');
-        }
-
-        function applyLanguage(lang) {
-            currentLang = lang;
-            const t = translations[lang];
-
-            // Mettre à jour le bouton déclencheur (drapeau + code)
-            const flagClass = lang === 'fr' ? 'fi-fr' : 'fi-gb';
-            const code = lang === 'fr' ? 'FR' : 'EN';
-            document.querySelectorAll('.lang-flag').forEach(el => {
-                el.className = `fi ${flagClass} fis lang-flag`;
-            });
-            document.querySelectorAll('.lang-code').forEach(el => {
-                el.textContent = code;
-            });
-            // Mettre en valeur l'option active dans le dropdown
-            document.querySelectorAll('[data-lang-item]').forEach(btn => {
-                const active = btn.dataset.langItem === lang;
-                btn.classList.toggle('text-white', active);
-                btn.classList.toggle('bg-white/5', active);
-                btn.classList.toggle('text-navy-300', !active);
-            });
-            document.documentElement.lang = lang;
-            localStorage.setItem('lang', lang);
-
-            if (!t) return;
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.dataset.i18n;
-                if (t[key] !== undefined) el.textContent = t[key];
-            });
-
-            document.querySelectorAll('[data-i18n-html]').forEach(el => {
-                const key = el.dataset.i18nHtml;
-                if (t[key] !== undefined) el.innerHTML = t[key];
-            });
-
-            if (t['page_title']) document.title = t['page_title'];
-        }
-
-        function toggleLangMenu(btn) {
-            const menu = btn.nextElementSibling;
-            menu.classList.toggle('hidden');
-        }
-
-        function closeLangMenus() {
-            document.querySelectorAll('.lang-menu').forEach(m => m.classList.add('hidden'));
-        }
-
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.lang-dropdown')) closeLangMenus();
-        });
-
         // ── Mobile nav ────────────────────────────────────────────────────────
         document.getElementById('navToggle').addEventListener('click', () => {
             const m = document.getElementById('mobileMenu');
@@ -689,75 +601,7 @@
                 }
             });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .skill-bar').forEach(el => observer.observe(el));
-
-        // ── Semantic Scholar API ──────────────────────────────────────────────
-        const AUTHOR_ID = '2316429402';
-        const API_URL = `https://api.semanticscholar.org/graph/v1/author/${AUTHOR_ID}/papers?fields=title,authors,year,venue,externalIds,url,openAccessPdf&limit=50`;
-
-        async function loadPublications() {
-            const c = document.getElementById('pub-list');
-            try {
-                const res = await fetch(API_URL);
-                if (!res.ok) throw new Error(res.status);
-                const json = await res.json();
-                const papers = json.data.sort((a, b) => (b.year || 0) - (a.year || 0));
-                if (!papers.length) throw new Error('empty');
-
-                c.innerHTML = papers.map(p => {
-                    const authors = (p.authors || []).map(a => {
-                        const me = a.name.toLowerCase().includes('es-sebbani') || a.name.toLowerCase().includes('es sebbani');
-                        return me ? `<span class="font-bold text-navy-900">${a.name}</span>` : a.name;
-                    }).join(', ');
-                    const venue = p.venue || '';
-                    const year = p.year || '';
-                    const badge = venue ? venue.split(/[,:]/).shift().trim() : year;
-                    const pdf = p.openAccessPdf?.url || '';
-                    const url = p.url || '';
-                    let links = '';
-                    if (url) links += `<a href="${url}" target="_blank" class="inline-block text-[11px] font-bold uppercase tracking-wide text-navy-900 border border-navy-300 px-3 py-1 hover:bg-navy-900 hover:text-white hover:border-navy-900 no-underline transition">Paper</a>`;
-                    if (pdf) links += `<a href="${pdf}" target="_blank" class="inline-block text-[11px] font-bold uppercase tracking-wide text-navy-900 border border-navy-300 px-3 py-1 hover:bg-navy-900 hover:text-white hover:border-navy-900 no-underline transition">PDF</a>`;
-
-                    return `<div class="bg-navy-50 border-l-4 border-navy-900 p-6 mb-4 card-lift reveal visible">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">${badge} ${year}</span>
-                        <p class="text-[15px] font-bold text-navy-900 leading-snug">${p.title}</p>
-                        <p class="text-[13px] text-navy-500 mt-1.5">${authors}</p>
-                        ${venue ? `<p class="text-[12px] text-navy-400 mt-0.5">${venue}, ${year}.</p>` : ''}
-                        <div class="flex gap-2 mt-3">${links}</div>
-                    </div>`;
-                }).join('');
-            } catch (e) {
-                c.innerHTML = `
-                    <div class="bg-navy-50 border-l-4 border-navy-900 p-6 mb-4">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ICML 2026</span>
-                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Evaluating Robustness of Reasoning Models on Parameterized Logical Problems</p>
-                        <p class="text-[13px] text-navy-500 mt-1.5"><span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Esteban Marquer, Yakoub Salhi, Zied Bouraoui</p>
-                        <p class="text-[12px] text-navy-400 mt-0.5">International Conference on Machine Learning, 2026.</p>
-                    </div>
-                    <div class="bg-navy-50 border-l-4 border-navy-900 p-6 mb-4">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">LREC 2026</span>
-                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Learning Long-Document Embeddings via Chunk-Context Entailment</p>
-                        <p class="text-[13px] text-navy-500 mt-1.5">Waheed Ahmed Abro, <span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Zied Bouraoui</p>
-                        <p class="text-[12px] text-navy-400 mt-0.5">Language Resources and Evaluation Conference, 2026.</p>
-                    </div>
-                    <div class="bg-navy-50 border-l-4 border-navy-900 p-6 mb-4">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ACL 2025</span>
-                        <p class="text-[15px] font-bold text-navy-900 leading-snug">Modeling Complex Semantic Relations with Contrastively Fine-Tuned Relational Encoders</p>
-                        <p class="text-[13px] text-navy-500 mt-1.5"><span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Esteban Marquer, Zied Bouraoui</p>
-                        <p class="text-[12px] text-navy-400 mt-0.5">63rd Annual Meeting of the ACL, pp. 20259–20288, 2025.</p>
-                    </div>
-                    <div class="bg-navy-50 border-l-4 border-navy-900 p-6 mb-4">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ECAI 2024</span>
-                        <p class="text-[15px] font-bold text-navy-900 leading-snug">REFINE-LM: Mitigating Language Model Stereotypes via Reinforcement Learning</p>
-                        <p class="text-[13px] text-navy-500 mt-1.5">Rameez Qureshi, <span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Luis Galárraga, Yvette Graham, Miguel Couceiro, Zied Bouraoui</p>
-                        <p class="text-[12px] text-navy-400 mt-0.5">27th European Conference on Artificial Intelligence, vol. 392, pp. 4027–4034, 2024.</p>
-                    </div>`;
-            }
-        }
-
-        // Init
-        initI18n();
-        loadPublications();
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
