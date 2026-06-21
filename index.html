@@ -123,11 +123,31 @@
         <div class="max-w-6xl mx-auto px-6 h-14 flex justify-between items-center">
             <a href="#top" class="font-bold text-white tracking-tight no-underline text-sm">N. ES-SEBBANI</a>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#parcours" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Parcours</a>
-                <a href="#competences" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Compétences</a>
-                <a href="#publications" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Publications</a>
-                <a href="#colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Conférences</a>
-                <a href="#contact" class="text-[13px] font-semibold text-navy-950 bg-white px-5 py-1.5 hover:bg-navy-100 no-underline transition">Contact</a>
+                <a href="#parcours" class="text-[13px] text-navy-300 hover:text-white no-underline transition" data-i18n="nav.parcours">Parcours</a>
+                <a href="#competences" class="text-[13px] text-navy-300 hover:text-white no-underline transition" data-i18n="nav.competences">Compétences</a>
+                <a href="#publications" class="text-[13px] text-navy-300 hover:text-white no-underline transition" data-i18n="nav.publications">Publications</a>
+                <a href="#colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition" data-i18n="nav.conferences">Conférences</a>
+                <a href="#contact" class="text-[13px] font-semibold text-navy-950 bg-white px-5 py-1.5 hover:bg-navy-100 no-underline transition" data-i18n="nav.contact">Contact</a>
+                <!-- Language switcher (desktop) -->
+                <div class="relative ml-1" id="langDropdown">
+                    <button id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" class="flex items-center gap-2 text-[13px] text-navy-200 hover:text-white transition">
+                        <span id="langFlag" class="flex"></span>
+                        <span id="langCode" class="font-semibold tracking-wide">FR</span>
+                        <svg id="langChevron" class="w-3 h-3 transition-transform duration-200" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <path d="M2.5 4.5 6 8l3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div id="langMenu" class="hidden absolute right-0 mt-3 w-40 bg-navy-900 border border-white/10 shadow-xl overflow-hidden">
+                        <button type="button" data-lang="fr" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-[13px] text-navy-200 hover:bg-white/10 hover:text-white transition text-left">
+                            <svg viewBox="0 0 9 6" class="w-5 h-[13px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect width="3" height="6" fill="#0055A4"/><rect x="6" width="3" height="6" fill="#EF4135"/></svg>
+                            <span>Français</span>
+                        </button>
+                        <button type="button" data-lang="en" class="lang-option flex items-center gap-3 w-full px-4 py-2.5 text-[13px] text-navy-200 hover:bg-white/10 hover:text-white transition text-left">
+                            <svg viewBox="0 0 60 30" class="w-5 h-[10px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>
+                            <span>English</span>
+                        </button>
+                    </div>
+                </div>
             </div>
             <button class="md:hidden" id="navToggle">
                 <span class="block w-5 h-0.5 bg-white mb-1.5"></span>
@@ -136,11 +156,22 @@
             </button>
         </div>
         <div class="hidden flex-col items-center gap-4 pb-5 bg-navy-950 md:hidden" id="mobileMenu">
-            <a href="#parcours" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Parcours</a>
-            <a href="#competences" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Compétences</a>
-            <a href="#publications" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Publications</a>
-            <a href="#colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Conférences</a>
-            <a href="#contact" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Contact</a>
+            <a href="#parcours" onclick="closeMobile()" class="text-sm text-navy-200 no-underline" data-i18n="nav.parcours">Parcours</a>
+            <a href="#competences" onclick="closeMobile()" class="text-sm text-navy-200 no-underline" data-i18n="nav.competences">Compétences</a>
+            <a href="#publications" onclick="closeMobile()" class="text-sm text-navy-200 no-underline" data-i18n="nav.publications">Publications</a>
+            <a href="#colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline" data-i18n="nav.conferences">Conférences</a>
+            <a href="#contact" onclick="closeMobile()" class="text-sm text-navy-200 no-underline" data-i18n="nav.contact">Contact</a>
+            <!-- Language switcher (mobile) -->
+            <div class="flex items-center gap-5 pt-3 mt-1 border-t border-white/10">
+                <button type="button" data-lang="fr" class="lang-option flex items-center gap-2 text-sm text-navy-200 hover:text-white transition">
+                    <svg viewBox="0 0 9 6" class="w-5 h-[13px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect width="3" height="6" fill="#0055A4"/><rect x="6" width="3" height="6" fill="#EF4135"/></svg>
+                    <span>Français</span>
+                </button>
+                <button type="button" data-lang="en" class="lang-option flex items-center gap-2 text-sm text-navy-200 hover:text-white transition">
+                    <svg viewBox="0 0 60 30" class="w-5 h-[10px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>
+                    <span>English</span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -160,22 +191,22 @@
                 </div>
                 <!-- Text -->
                 <div class="text-center md:text-left">
-                    <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-3 hero-anim-1">Ingénieur IA/ML · Docteur en Intelligence Artificielle</p>
+                    <p class="text-navy-400 text-sm font-medium tracking-widest uppercase mb-3 hero-anim-1" data-i18n="hero.role">Ingénieur IA/ML · Docteur en Intelligence Artificielle</p>
                     <h1 class="font-display text-5xl md:text-6xl font-800 text-white leading-none tracking-tight hero-anim-2">
                         Naïm<br>Es-Sebbani
                     </h1>
-                    <p class="text-navy-300 mt-5 text-base leading-relaxed max-w-xl hero-anim-3">
+                    <p class="text-navy-300 mt-5 text-base leading-relaxed max-w-xl hero-anim-3" data-i18n="hero.intro">
                         Docteur en IA (NLP &amp; LLM) et ingénieur logiciel de formation. Je conçois, entraîne et déploie des systèmes LLM/NLP de bout en bout, du pipeline de données au produit livré. Premier auteur à ICML et ACL.
                     </p>
-                    <p class="text-navy-200 mt-3 text-base font-semibold leading-relaxed max-w-xl hero-anim-3">
+                    <p class="text-navy-200 mt-3 text-base font-semibold leading-relaxed max-w-xl hero-anim-3" data-i18n="hero.tagline">
                         Double casquette chercheur IA et ingénieur logiciel : un profil rare, de la recherche au produit.
                     </p>
                     <div class="flex items-center gap-4 mt-7 flex-wrap justify-center md:justify-start hero-anim-4">
-                        <a href="CV.pdf" target="_blank" class="text-[13px] font-semibold bg-white text-navy-950 px-6 py-2.5 hover:bg-navy-100 no-underline transition">Télécharger mon CV</a>
+                        <a href="CV.pdf" target="_blank" class="text-[13px] font-semibold bg-white text-navy-950 px-6 py-2.5 hover:bg-navy-100 no-underline transition" data-i18n="hero.cv">Télécharger mon CV</a>
                         <a href="tel:+33787259602" class="text-[13px] font-semibold text-white border border-white/30 px-6 py-2.5 hover:border-white hover:bg-white/10 no-underline transition">07 87 25 96 02</a>
                         <span class="flex items-center gap-2 text-[13px] font-semibold text-emerald-400">
                             <span class="w-2 h-2 bg-emerald-400 rounded-full pulse-dot"></span>
-                            <span>Disponible</span>
+                            <span data-i18n="hero.available">Disponible</span>
                         </span>
                     </div>
                 </div>
@@ -189,8 +220,8 @@
         <!-- ══════ PARCOURS ══════ -->
         <section class="py-20 bg-white" id="parcours">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Mon parcours</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Formation &amp; Expérience</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="parcours.kicker">Mon parcours</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="parcours.title">Formation &amp; Expérience</h2>
 
                 <div class="space-y-0 stagger">
                     <!-- Doctorat -->
@@ -201,9 +232,9 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-white bg-navy-900 px-3 py-1 mb-2">2023 – 2026</span>
-                            <h3 class="text-lg font-bold text-navy-900">Chercheur doctorant en IA</h3>
-                            <p class="text-sm text-navy-400 mt-0.5">CRIL — Centre de Recherche en Informatique de Lens, Université d'Artois</p>
-                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                            <h3 class="text-lg font-bold text-navy-900" data-i18n="parcours.phd.role">Chercheur doctorant en IA</h3>
+                            <p class="text-sm text-navy-400 mt-0.5" data-i18n="parcours.phd.org">CRIL — Centre de Recherche en Informatique de Lens, Université d'Artois</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl" data-i18n="parcours.phd.desc">
                                 Conception, entraînement et évaluation de systèmes LLM/NLP de bout en bout, en autonomie — du pipeline de données aux expériences à grande échelle.<br/> Thèse « Modeling Relational Knowledge in Language, Reasoning, and Learning », dirigée par Zied Bouraoui. Labos : CRIL &amp; Grammatica · Soutenance prévue : octobre 2026.
                             </p>
                         </div>
@@ -216,9 +247,9 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2021 – 2023</span>
-                            <h3 class="text-lg font-bold text-navy-900">Ingénieur logiciel</h3>
-                            <p class="text-sm text-navy-400 mt-0.5"><span class="font-bold text-navy-900">CGI</span> — en parallèle du Master Ingénierie Logicielle, Université d'Artois</p>
-                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                            <h3 class="text-lg font-bold text-navy-900" data-i18n="parcours.cgi.role">Ingénieur logiciel</h3>
+                            <p class="text-sm text-navy-400 mt-0.5" data-i18n="parcours.cgi.org"><span class="font-bold text-navy-900">CGI</span> — en parallèle du Master Ingénierie Logicielle, Université d'Artois</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl" data-i18n="parcours.cgi.desc">
                                 Deux ans de contribution au développement et à la maintenance d'une application métier en production, tout en automatisant des processus récurrents pour alléger le travail des équipes.
                             </p>
                         </div>
@@ -231,9 +262,9 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2020 – 2021</span>
-                            <h3 class="text-lg font-bold text-navy-900">Licence Informatique</h3>
-                            <p class="text-sm text-navy-400 mt-0.5">Université d'Artois, Lens</p>
-                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
+                            <h3 class="text-lg font-bold text-navy-900" data-i18n="parcours.lic.role">Licence Informatique</h3>
+                            <p class="text-sm text-navy-400 mt-0.5" data-i18n="parcours.lic.org">Université d'Artois, Lens</p>
+                            <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl" data-i18n="parcours.lic.desc">
                                 Stage au Laboratoire de Mathématiques de Lens : reconstruction 3D monoculaire pour la photopléthysmographie à distance.
                             </p>
                         </div>
@@ -245,8 +276,8 @@
                         </div>
                         <div>
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2018 – 2020</span>
-                            <h3 class="text-lg font-bold text-navy-900">DUT Informatique</h3>
-                            <p class="text-sm text-navy-400 mt-0.5">IUT de Lens</p>
+                            <h3 class="text-lg font-bold text-navy-900" data-i18n="parcours.dut.role">DUT Informatique</h3>
+                            <p class="text-sm text-navy-400 mt-0.5" data-i18n="parcours.dut.org">IUT de Lens</p>
                         </div>
                     </div>
                 </div>
@@ -256,8 +287,8 @@
         <!-- ══════ COMPÉTENCES ══════ -->
         <section class="py-20 bg-navy-50" id="competences">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Savoir-faire</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Compétences techniques</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="competences.kicker">Savoir-faire</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="competences.title">Compétences techniques</h2>
 
                 <div class="grid sm:grid-cols-2 gap-5 stagger">
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
@@ -267,8 +298,8 @@
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">RAG (LangChain, LlamaIndex, FAISS)</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">RLHF</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Embeddings</span>
-                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Graphes de connaissances</span>
-                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Mitigation de biais</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1" data-i18n="competences.tag.kg">Graphes de connaissances</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1" data-i18n="competences.tag.bias">Mitigation de biais</span>
                         </div>
                     </div>
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
@@ -283,7 +314,7 @@
                         </div>
                     </div>
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">MLOps / Outils</h3>
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3" data-i18n="competences.c3.title">MLOps / Outils</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Git</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Docker</span>
@@ -294,7 +325,7 @@
                         </div>
                     </div>
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Développement logiciel</h3>
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3" data-i18n="competences.c4.title">Développement logiciel</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Angular</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">React</span>
@@ -305,7 +336,7 @@
                         </div>
                     </div>
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Langages</h3>
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3" data-i18n="competences.c5.title">Langages</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Python</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">C</span>
@@ -315,12 +346,12 @@
                         </div>
                     </div>
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3">Cloud &amp; Langues</h3>
+                        <h3 class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-3" data-i18n="competences.c6.title">Cloud &amp; Langues</h3>
                         <div class="flex flex-wrap gap-2">
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Modal</span>
                             <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">AWS</span>
-                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Français (natif)</span>
-                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1">Anglais (courant)</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1" data-i18n="competences.tag.frnative">Français (natif)</span>
+                            <span class="text-[12px] font-medium text-navy-700 bg-navy-50 border border-navy-100 px-2.5 py-1" data-i18n="competences.tag.enfluent">Anglais (courant)</span>
                         </div>
                     </div>
                 </div>
@@ -330,22 +361,22 @@
         <!-- ══════ ENSEIGNEMENT ══════ -->
         <section class="py-20 bg-white" id="enseignement">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Académique</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Expérience d'enseignement</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="enseignement.kicker">Académique</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="enseignement.title">Expérience d'enseignement</h2>
 
                 <div class="bg-navy-50 border border-navy-100 p-7 card-lift reveal">
                     <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div>
-                            <h3 class="text-base font-bold text-navy-900">Université d'Artois — Faculté Jean Perrin</h3>
-                            <p class="text-sm text-navy-500 mt-0.5 italic">Chargé de TD/TP</p>
+                            <h3 class="text-base font-bold text-navy-900" data-i18n="enseignement.org">Université d'Artois — Faculté Jean Perrin</h3>
+                            <p class="text-sm text-navy-500 mt-0.5 italic" data-i18n="enseignement.role">Chargé de TD/TP</p>
                             <div class="mt-5 space-y-3">
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p class="text-sm text-navy-600">Algorithmique 2, L1</p>
+                                    <p class="text-sm text-navy-600" data-i18n="enseignement.course1">Algorithmique 2, L1</p>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p class="text-sm text-navy-600">Deep Learning appliqué, M2</p>
+                                    <p class="text-sm text-navy-600" data-i18n="enseignement.course2">Deep Learning appliqué, M2</p>
                                 </div>
                             </div>
                         </div>
@@ -358,8 +389,8 @@
         <!-- ══════ PUBLICATIONS ══════ -->
         <section class="py-20 bg-navy-50" id="publications">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Recherche</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Publications</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="publications.kicker">Recherche</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="publications.title">Publications</h2>
 
                 <div id="pub-list">
                     <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
@@ -391,10 +422,10 @@
                     </div>
                 </div>
 
-                <p class="text-sm text-navy-500 mt-2 reveal">+ 3 articles en cours d'évaluation : 1 NeurIPS et 2 ARR (<span class="italic">under review</span>).</p>
+                <p class="text-sm text-navy-500 mt-2 reveal" data-i18n="publications.review">+ 3 articles en cours d'évaluation : 1 NeurIPS et 2 ARR (<span class="italic">under review</span>).</p>
 
                 <!-- Posters -->
-                <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-16 mb-6 reveal">Posters</h3>
+                <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-16 mb-6 reveal" data-i18n="publications.posters">Posters</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-5 stagger">
                     <a href="poster/ICML_26.pdf" target="_blank" class="group no-underline card-lift reveal-scale">
                         <div class="aspect-[3/4] bg-white border border-navy-100 overflow-hidden mb-3">
@@ -431,64 +462,64 @@
         <!-- ══════ COLLOQUES ══════ -->
         <section class="py-20 bg-white" id="colloques">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Présentations</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Conférences</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="colloques.kicker">Présentations</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="colloques.title">Conférences</h2>
 
                 <div class="space-y-0 divide-y divide-navy-200">
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juil. 2026</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d1">Juil. 2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ICML 2026 — International Conference on Machine Learning</p>
-                            <p class="text-sm text-navy-400">Séoul, Corée du Sud · Présentation orale + poster <span class="inline-block align-middle text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2 py-0.5 ml-1">Spotlight</span></p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.icml.loc">Séoul, Corée du Sud · Présentation orale + poster <span class="inline-block align-middle text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2 py-0.5 ml-1">Spotlight</span></p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juin 2026</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d2">Juin 2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">PFIA 2026 — Plate-Forme de l'Intelligence Artificielle</p>
-                            <p class="text-sm text-navy-400">Arras, France · Co-organisateur</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.pfia.loc">Arras, France · Co-organisateur</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Mai 2026</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d3">Mai 2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">LREC 2026 — Language Resources and Evaluation Conference</p>
-                            <p class="text-sm text-navy-400">Palma de Majorque, Espagne · Présentation de poster</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.lrec.loc">Palma de Majorque, Espagne · Présentation de poster</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Nov. 2025</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d4">Nov. 2025</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">EMNLP 2025 — Conference on Empirical Methods in Natural Language Processing</p>
-                            <p class="text-sm text-navy-400">Suzhou, Chine · Participation sans communication</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.emnlp25.loc">Suzhou, Chine · Participation sans communication</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juil. 2025</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d5">Juil. 2025</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ACL 2025 — Annual Meeting of the Association for Computational Linguistics</p>
-                            <p class="text-sm text-navy-400">Vienne, Autriche · Présentation orale</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.acl.loc">Vienne, Autriche · Présentation orale</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Nov. 2024</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d6">Nov. 2024</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">EMNLP 2024 — Conference on Empirical Methods in Natural Language Processing</p>
-                            <p class="text-sm text-navy-400">Miami, États-Unis · Participation sans communication</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.emnlp24.loc">Miami, États-Unis · Participation sans communication</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Oct. 2024</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0" data-i18n="colloques.d7">Oct. 2024</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ECAI 2024 — European Conference on Artificial Intelligence</p>
-                            <p class="text-sm text-navy-400">Saint-Jacques-de-Compostelle, Espagne · Présentation de poster</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.ecai.loc">Saint-Jacques-de-Compostelle, Espagne · Présentation de poster</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-400 italic md:w-24 shrink-0">2026</span>
+                        <span class="text-[13px] font-bold text-navy-400 italic md:w-24 shrink-0" data-i18n="colloques.d8">2026</span>
                         <div>
-                            <p class="text-[15px] font-semibold text-navy-600">JDD CRIL &amp; PhD Days — Présentations de thèse</p>
-                            <p class="text-sm text-navy-400">Laboratoire CRIL · Présentation interne</p>
+                            <p class="text-[15px] font-semibold text-navy-600" data-i18n="colloques.jdd.title">JDD CRIL &amp; PhD Days — Présentations de thèse</p>
+                            <p class="text-sm text-navy-400" data-i18n="colloques.jdd.loc">Laboratoire CRIL · Présentation interne</p>
                         </div>
                     </div>
                 </div>
@@ -498,46 +529,46 @@
         <!-- ══════ SERVICE ACADÉMIQUE ══════ -->
         <section class="py-20 bg-navy-50" id="service">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Communauté</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Service académique</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="service.kicker">Communauté</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="service.title">Service académique</h2>
 
                 <div class="space-y-5">
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
                         <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
                             <div>
-                                <p class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-1">Université d'Artois · France</p>
-                                <h3 class="text-base font-bold text-navy-900">Formateur invité</h3>
-                                <p class="text-sm text-navy-600 mt-1 max-w-lg">Organisation et animation d'un atelier de formation sur les grands modèles de langage (LLMs) pour les enseignants-chercheurs.</p>
+                                <p class="text-[11px] font-bold uppercase tracking-wider text-navy-400 mb-1" data-i18n="service.org">Université d'Artois · France</p>
+                                <h3 class="text-base font-bold text-navy-900" data-i18n="service.role">Formateur invité</h3>
+                                <p class="text-sm text-navy-600 mt-1 max-w-lg" data-i18n="service.desc">Organisation et animation d'un atelier de formation sur les grands modèles de langage (LLMs) pour les enseignants-chercheurs.</p>
                             </div>
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 shrink-0">2025 – 2026</span>
                         </div>
                     </div>
 
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-base font-bold text-navy-900 mb-3">Organisation de réunions scientifiques</h3>
+                        <h3 class="text-base font-bold text-navy-900 mb-3" data-i18n="service.meetings.title">Organisation de réunions scientifiques</h3>
                         <div class="space-y-2">
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Co-organisateur de <span class="font-semibold text-navy-800">PFIA 2026</span>, Plate-Forme de l'Intelligence Artificielle, Arras <span class="text-navy-400">(2026)</span></p>
+                                <p class="text-sm text-navy-600" data-i18n="service.meetings.1">Co-organisateur de <span class="font-semibold text-navy-800">PFIA 2026</span>, Plate-Forme de l'Intelligence Artificielle, Arras <span class="text-navy-400">(2026)</span></p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IA2</span> <span class="text-navy-400">(2025–présent)</span></p>
+                                <p class="text-sm text-navy-600" data-i18n="service.meetings.2">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IA2</span> <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IARML</span> <span class="text-navy-400">(2025–présent)</span></p>
+                                <p class="text-sm text-navy-600" data-i18n="service.meetings.3">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IARML</span> <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
-                                <p class="text-sm text-navy-600">Participation aux séminaires, ateliers et réunions de recherche du laboratoire CRIL <span class="text-navy-400">(2025–présent)</span></p>
+                                <p class="text-sm text-navy-600" data-i18n="service.meetings.4">Participation aux séminaires, ateliers et réunions de recherche du laboratoire CRIL <span class="text-navy-400">(2025–présent)</span></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
-                        <h3 class="text-base font-bold text-navy-900 mb-1">Relecture</h3>
-                        <p class="text-sm text-navy-600">Relecteur occasionnel pour le <span class="italic">European Journal of Artificial Intelligence</span>.</p>
+                        <h3 class="text-base font-bold text-navy-900 mb-1" data-i18n="service.review.title">Relecture</h3>
+                        <p class="text-sm text-navy-600" data-i18n="service.review.desc">Relecteur occasionnel pour le <span class="italic">European Journal of Artificial Intelligence</span>.</p>
                     </div>
                 </div>
             </div>
@@ -546,23 +577,23 @@
         <!-- ══════ PROJETS ══════ -->
         <section class="py-20 bg-white" id="projets">
             <div class="max-w-5xl mx-auto px-6">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Réalisations</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Projets</h2>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="projets.kicker">Réalisations</p>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal" data-i18n="projets.title">Projets</h2>
 
                 <div class="grid md:grid-cols-2 gap-5">
                     <a href="https://biasinai.github.io/refinelm/" target="_blank" class="group block bg-navy-950 p-7 no-underline card-lift reveal-scale">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Démo interactive</span>
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4" data-i18n="projets.demo.badge">Démo interactive</span>
                         <h3 class="text-lg font-bold text-white group-hover:text-navy-200 transition">REFINE-LM</h3>
-                        <p class="text-sm text-navy-300 mt-2 leading-relaxed">
+                        <p class="text-sm text-navy-300 mt-2 leading-relaxed" data-i18n="projets.demo.desc">
                             Démo de débiaisage des LLMs par apprentissage par renforcement. Comparaison sur BERT, RoBERTa, Llama, Mistral.
                         </p>
-                        <span class="inline-block mt-4 text-[12px] font-semibold text-white border-b border-white/30 group-hover:border-white transition">Voir la démo →</span>
+                        <span class="inline-block mt-4 text-[12px] font-semibold text-white border-b border-white/30 group-hover:border-white transition" data-i18n="projets.demo.link">Voir la démo →</span>
                     </a>
 
                     <a href="https://github.com/essebbaninaim" target="_blank" class="group block bg-navy-900 p-7 no-underline card-lift reveal-scale">
-                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4">Code &amp; modèles</span>
+                        <span class="inline-block text-[10px] font-bold uppercase tracking-wider text-navy-950 bg-white px-2.5 py-1 mb-4" data-i18n="projets.code.badge">Code &amp; modèles</span>
                         <h3 class="text-lg font-bold text-white group-hover:text-navy-200 transition">GitHub &amp; Hugging Face</h3>
-                        <p class="text-sm text-navy-300 mt-2 leading-relaxed">
+                        <p class="text-sm text-navy-300 mt-2 leading-relaxed" data-i18n="projets.code.desc">
                             Implémentations, expériences et modèles entraînés autour de mes travaux NLP/LLM, en open source.
                         </p>
                         <span class="inline-flex flex-wrap gap-x-4 gap-y-1 mt-4 text-[12px] font-semibold text-white">
@@ -577,9 +608,9 @@
         <!-- ══════ CONTACT ══════ -->
         <section class="py-20 bg-navy-950 text-white" id="contact">
             <div class="max-w-5xl mx-auto px-6 text-center">
-                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Disponible</p>
-                <h2 class="font-display text-3xl font-700 text-white mb-4 reveal">Travaillons ensemble</h2>
-                <p class="text-navy-300 mb-10 max-w-md mx-auto reveal">Ouvert aux opportunités en IA/ML — de la recherche au produit.</p>
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal" data-i18n="contact.kicker">Disponible</p>
+                <h2 class="font-display text-3xl font-700 text-white mb-4 reveal" data-i18n="contact.title">Travaillons ensemble</h2>
+                <p class="text-navy-300 mb-10 max-w-md mx-auto reveal" data-i18n="contact.desc">Ouvert aux opportunités en IA/ML — de la recherche au produit.</p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
                     <a href="mailto:naim.essebbani@gmail.com" class="inline-block text-[15px] font-bold bg-white text-navy-950 px-8 py-3.5 hover:bg-navy-100 no-underline transition">naim.essebbani@gmail.com</a>
@@ -602,6 +633,270 @@
     </footer>
 
     <script>
+        // ── Internationalisation (FR / EN) ────────────────────────────────────
+        const i18n = {
+            fr: {
+                "meta.title": "Naïm Es-Sebbani — Ingénieur IA/ML",
+
+                "nav.parcours": "Parcours",
+                "nav.competences": "Compétences",
+                "nav.publications": "Publications",
+                "nav.conferences": "Conférences",
+                "nav.contact": "Contact",
+
+                "hero.role": "Ingénieur IA/ML · Docteur en Intelligence Artificielle",
+                "hero.intro": "Docteur en IA (NLP &amp; LLM) et ingénieur logiciel de formation. Je conçois, entraîne et déploie des systèmes LLM/NLP de bout en bout, du pipeline de données au produit livré. Premier auteur à ICML et ACL.",
+                "hero.tagline": "Double casquette chercheur IA et ingénieur logiciel : un profil rare, de la recherche au produit.",
+                "hero.cv": "Télécharger mon CV",
+                "hero.available": "Disponible",
+
+                "parcours.kicker": "Mon parcours",
+                "parcours.title": "Formation &amp; Expérience",
+                "parcours.phd.role": "Chercheur doctorant en IA",
+                "parcours.phd.org": "CRIL — Centre de Recherche en Informatique de Lens, Université d'Artois",
+                "parcours.phd.desc": "Conception, entraînement et évaluation de systèmes LLM/NLP de bout en bout, en autonomie — du pipeline de données aux expériences à grande échelle.<br/> Thèse « Modeling Relational Knowledge in Language, Reasoning, and Learning », dirigée par Zied Bouraoui. Labos : CRIL &amp; Grammatica · Soutenance prévue : octobre 2026.",
+                "parcours.cgi.role": "Ingénieur logiciel",
+                "parcours.cgi.org": "<span class='font-bold text-navy-900'>CGI</span> — en parallèle du Master Ingénierie Logicielle, Université d'Artois",
+                "parcours.cgi.desc": "Deux ans de contribution au développement et à la maintenance d'une application métier en production, tout en automatisant des processus récurrents pour alléger le travail des équipes.",
+                "parcours.lic.role": "Licence Informatique",
+                "parcours.lic.org": "Université d'Artois, Lens",
+                "parcours.lic.desc": "Stage au Laboratoire de Mathématiques de Lens : reconstruction 3D monoculaire pour la photopléthysmographie à distance.",
+                "parcours.dut.role": "DUT Informatique",
+                "parcours.dut.org": "IUT de Lens",
+
+                "competences.kicker": "Savoir-faire",
+                "competences.title": "Compétences techniques",
+                "competences.c3.title": "MLOps / Outils",
+                "competences.c4.title": "Développement logiciel",
+                "competences.c5.title": "Langages",
+                "competences.c6.title": "Cloud &amp; Langues",
+                "competences.tag.kg": "Graphes de connaissances",
+                "competences.tag.bias": "Mitigation de biais",
+                "competences.tag.frnative": "Français (natif)",
+                "competences.tag.enfluent": "Anglais (courant)",
+
+                "enseignement.kicker": "Académique",
+                "enseignement.title": "Expérience d'enseignement",
+                "enseignement.org": "Université d'Artois — Faculté Jean Perrin",
+                "enseignement.role": "Chargé de TD/TP",
+                "enseignement.course1": "Algorithmique 2, L1",
+                "enseignement.course2": "Deep Learning appliqué, M2",
+
+                "publications.kicker": "Recherche",
+                "publications.title": "Publications",
+                "publications.review": "+ 3 articles en cours d'évaluation : 1 NeurIPS et 2 ARR (<span class='italic'>under review</span>).",
+                "publications.posters": "Posters",
+
+                "colloques.kicker": "Présentations",
+                "colloques.title": "Conférences",
+                "colloques.d1": "Juil. 2026",
+                "colloques.d2": "Juin 2026",
+                "colloques.d3": "Mai 2026",
+                "colloques.d4": "Nov. 2025",
+                "colloques.d5": "Juil. 2025",
+                "colloques.d6": "Nov. 2024",
+                "colloques.d7": "Oct. 2024",
+                "colloques.d8": "2026",
+                "colloques.icml.loc": "Séoul, Corée du Sud · Présentation orale + poster <span class='inline-block align-middle text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2 py-0.5 ml-1'>Spotlight</span>",
+                "colloques.pfia.loc": "Arras, France · Co-organisateur",
+                "colloques.lrec.loc": "Palma de Majorque, Espagne · Présentation de poster",
+                "colloques.emnlp25.loc": "Suzhou, Chine · Participation sans communication",
+                "colloques.acl.loc": "Vienne, Autriche · Présentation orale",
+                "colloques.emnlp24.loc": "Miami, États-Unis · Participation sans communication",
+                "colloques.ecai.loc": "Saint-Jacques-de-Compostelle, Espagne · Présentation de poster",
+                "colloques.jdd.title": "JDD CRIL &amp; PhD Days — Présentations de thèse",
+                "colloques.jdd.loc": "Laboratoire CRIL · Présentation interne",
+
+                "service.kicker": "Communauté",
+                "service.title": "Service académique",
+                "service.org": "Université d'Artois · France",
+                "service.role": "Formateur invité",
+                "service.desc": "Organisation et animation d'un atelier de formation sur les grands modèles de langage (LLMs) pour les enseignants-chercheurs.",
+                "service.meetings.title": "Organisation de réunions scientifiques",
+                "service.meetings.1": "Co-organisateur de <span class='font-semibold text-navy-800'>PFIA 2026</span>, Plate-Forme de l'Intelligence Artificielle, Arras <span class='text-navy-400'>(2026)</span>",
+                "service.meetings.2": "Co-organisation des activités scientifiques du groupe de recherche <span class='font-semibold text-navy-800'>IA2</span> <span class='text-navy-400'>(2025–présent)</span>",
+                "service.meetings.3": "Co-organisation des activités scientifiques du groupe de recherche <span class='font-semibold text-navy-800'>IARML</span> <span class='text-navy-400'>(2025–présent)</span>",
+                "service.meetings.4": "Participation aux séminaires, ateliers et réunions de recherche du laboratoire CRIL <span class='text-navy-400'>(2025–présent)</span>",
+                "service.review.title": "Relecture",
+                "service.review.desc": "Relecteur occasionnel pour le <span class='italic'>European Journal of Artificial Intelligence</span>.",
+
+                "projets.kicker": "Réalisations",
+                "projets.title": "Projets",
+                "projets.demo.badge": "Démo interactive",
+                "projets.demo.desc": "Démo de débiaisage des LLMs par apprentissage par renforcement. Comparaison sur BERT, RoBERTa, Llama, Mistral.",
+                "projets.demo.link": "Voir la démo →",
+                "projets.code.badge": "Code &amp; modèles",
+                "projets.code.desc": "Implémentations, expériences et modèles entraînés autour de mes travaux NLP/LLM, en open source.",
+
+                "contact.kicker": "Disponible",
+                "contact.title": "Travaillons ensemble",
+                "contact.desc": "Ouvert aux opportunités en IA/ML — de la recherche au produit."
+            },
+            en: {
+                "meta.title": "Naïm Es-Sebbani — AI/ML Engineer",
+
+                "nav.parcours": "Career",
+                "nav.competences": "Skills",
+                "nav.publications": "Publications",
+                "nav.conferences": "Conferences",
+                "nav.contact": "Contact",
+
+                "hero.role": "AI/ML Engineer · PhD in Artificial Intelligence",
+                "hero.intro": "PhD in AI (NLP &amp; LLM) and software engineer by training. I design, train and deploy end-to-end LLM/NLP systems, from the data pipeline to the delivered product. First author at ICML and ACL.",
+                "hero.tagline": "A dual profile — AI researcher and software engineer: a rare combination, from research to product.",
+                "hero.cv": "Download my CV",
+                "hero.available": "Available",
+
+                "parcours.kicker": "My journey",
+                "parcours.title": "Education &amp; Experience",
+                "parcours.phd.role": "PhD Researcher in AI",
+                "parcours.phd.org": "CRIL — Lens Computer Science Research Center, University of Artois",
+                "parcours.phd.desc": "Design, training and evaluation of end-to-end LLM/NLP systems, independently — from the data pipeline to large-scale experiments.<br/> Thesis “Modeling Relational Knowledge in Language, Reasoning, and Learning”, supervised by Zied Bouraoui. Labs: CRIL &amp; Grammatica · Defense expected: October 2026.",
+                "parcours.cgi.role": "Software Engineer",
+                "parcours.cgi.org": "<span class='font-bold text-navy-900'>CGI</span> — alongside the Master's in Software Engineering, University of Artois",
+                "parcours.cgi.desc": "Two years contributing to the development and maintenance of a business application in production, while automating recurring processes to ease the teams' workload.",
+                "parcours.lic.role": "Bachelor's in Computer Science",
+                "parcours.lic.org": "University of Artois, Lens",
+                "parcours.lic.desc": "Internship at the Lens Mathematics Laboratory: monocular 3D reconstruction for remote photoplethysmography.",
+                "parcours.dut.role": "Associate Degree in Computer Science",
+                "parcours.dut.org": "IUT de Lens",
+
+                "competences.kicker": "Expertise",
+                "competences.title": "Technical Skills",
+                "competences.c3.title": "MLOps / Tools",
+                "competences.c4.title": "Software Development",
+                "competences.c5.title": "Languages",
+                "competences.c6.title": "Cloud &amp; Languages",
+                "competences.tag.kg": "Knowledge graphs",
+                "competences.tag.bias": "Bias mitigation",
+                "competences.tag.frnative": "French (native)",
+                "competences.tag.enfluent": "English (fluent)",
+
+                "enseignement.kicker": "Academic",
+                "enseignement.title": "Teaching Experience",
+                "enseignement.org": "University of Artois — Jean Perrin Faculty",
+                "enseignement.role": "Teaching Assistant (tutorials &amp; labs)",
+                "enseignement.course1": "Algorithms 2, 1st-year Bachelor",
+                "enseignement.course2": "Applied Deep Learning, 2nd-year Master",
+
+                "publications.kicker": "Research",
+                "publications.title": "Publications",
+                "publications.review": "+ 3 more papers currently under review: 1 at NeurIPS and 2 in ARR.",
+                "publications.posters": "Posters",
+
+                "colloques.kicker": "Presentations",
+                "colloques.title": "Conferences",
+                "colloques.d1": "Jul. 2026",
+                "colloques.d2": "Jun. 2026",
+                "colloques.d3": "May 2026",
+                "colloques.d4": "Nov. 2025",
+                "colloques.d5": "Jul. 2025",
+                "colloques.d6": "Nov. 2024",
+                "colloques.d7": "Oct. 2024",
+                "colloques.d8": "2026",
+                "colloques.icml.loc": "Seoul, South Korea · Oral presentation + poster <span class='inline-block align-middle text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2 py-0.5 ml-1'>Spotlight</span>",
+                "colloques.pfia.loc": "Arras, France · Co-organizer",
+                "colloques.lrec.loc": "Palma de Mallorca, Spain · Poster presentation",
+                "colloques.emnlp25.loc": "Suzhou, China · Attended, no presentation",
+                "colloques.acl.loc": "Vienna, Austria · Oral presentation",
+                "colloques.emnlp24.loc": "Miami, USA · Attended, no presentation",
+                "colloques.ecai.loc": "Santiago de Compostela, Spain · Poster presentation",
+                "colloques.jdd.title": "JDD CRIL &amp; PhD Days — Thesis presentations",
+                "colloques.jdd.loc": "CRIL Laboratory · Internal presentation",
+
+                "service.kicker": "Community",
+                "service.title": "Academic Service",
+                "service.org": "University of Artois · France",
+                "service.role": "Invited Trainer",
+                "service.desc": "Organized and led a training workshop on large language models (LLMs) for faculty researchers.",
+                "service.meetings.title": "Organization of Scientific Meetings",
+                "service.meetings.1": "Co-organizer of <span class='font-semibold text-navy-800'>PFIA 2026</span>, the French AI Platform, Arras <span class='text-navy-400'>(2026)</span>",
+                "service.meetings.2": "Co-organization of the scientific activities of the <span class='font-semibold text-navy-800'>IA2</span> research group <span class='text-navy-400'>(2025–present)</span>",
+                "service.meetings.3": "Co-organization of the scientific activities of the <span class='font-semibold text-navy-800'>IARML</span> research group <span class='text-navy-400'>(2025–present)</span>",
+                "service.meetings.4": "Participation in seminars, workshops and research meetings of the CRIL laboratory <span class='text-navy-400'>(2025–present)</span>",
+                "service.review.title": "Reviewing",
+                "service.review.desc": "Occasional reviewer for the <span class='italic'>European Journal of Artificial Intelligence</span>.",
+
+                "projets.kicker": "Achievements",
+                "projets.title": "Projects",
+                "projets.demo.badge": "Interactive demo",
+                "projets.demo.desc": "LLM debiasing demo using reinforcement learning. Comparison across BERT, RoBERTa, Llama, Mistral.",
+                "projets.demo.link": "View the demo →",
+                "projets.code.badge": "Code &amp; models",
+                "projets.code.desc": "Implementations, experiments and trained models from my NLP/LLM work, all open source.",
+
+                "contact.kicker": "Available",
+                "contact.title": "Let's work together",
+                "contact.desc": "Open to opportunities in AI/ML — from research to product."
+            }
+        };
+
+        // SVG flags (rendered everywhere, including Windows where emoji flags don't show)
+        const flags = {
+            fr: '<svg viewBox="0 0 9 6" class="w-5 h-[13px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="9" height="6" fill="#fff"/><rect width="3" height="6" fill="#0055A4"/><rect x="6" width="3" height="6" fill="#EF4135"/></svg>',
+            en: '<svg viewBox="0 0 60 30" class="w-5 h-[10px] shrink-0 rounded-[2px] ring-1 ring-black/10" aria-hidden="true"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><rect x="25" width="10" height="30" fill="#fff"/><rect y="10" width="60" height="10" fill="#fff"/><rect x="27" width="6" height="30" fill="#C8102E"/><rect y="12" width="60" height="6" fill="#C8102E"/></svg>'
+        };
+        const codes = { fr: "FR", en: "EN" };
+
+        function setLang(lang) {
+            if (!i18n[lang]) lang = 'fr';
+            const dict = i18n[lang];
+            document.documentElement.lang = lang;
+            document.title = dict["meta.title"];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+            // Update the dropdown trigger (flag + code)
+            document.getElementById('langFlag').innerHTML = flags[lang];
+            document.getElementById('langCode').textContent = codes[lang];
+            // Highlight the active language in the menu
+            document.querySelectorAll('.lang-option').forEach(btn => {
+                btn.classList.toggle('text-white', btn.getAttribute('data-lang') === lang);
+            });
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+        }
+
+        // ── Language dropdown ─────────────────────────────────────────────────
+        const langBtn = document.getElementById('langBtn');
+        const langMenu = document.getElementById('langMenu');
+        const langChevron = document.getElementById('langChevron');
+
+        function toggleLangMenu(open) {
+            const willOpen = open !== undefined ? open : langMenu.classList.contains('hidden');
+            langMenu.classList.toggle('hidden', !willOpen);
+            langBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            langChevron.style.transform = willOpen ? 'rotate(180deg)' : 'none';
+        }
+
+        langBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleLangMenu();
+        });
+
+        // Close dropdown on outside click
+        document.addEventListener('click', (e) => {
+            if (!document.getElementById('langDropdown').contains(e.target)) {
+                toggleLangMenu(false);
+            }
+        });
+
+        // All language options (desktop dropdown + mobile menu)
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLang(btn.getAttribute('data-lang'));
+                toggleLangMenu(false);
+                closeMobile();
+            });
+        });
+
+        // Apply saved language on load
+        (function () {
+            let saved = 'fr';
+            try { saved = localStorage.getItem('lang') || 'fr'; } catch (e) {}
+            setLang(saved);
+        })();
+
         // ── Mobile nav ────────────────────────────────────────────────────────
         document.getElementById('navToggle').addEventListener('click', () => {
             const m = document.getElementById('mobileMenu');
