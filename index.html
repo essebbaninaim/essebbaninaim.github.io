@@ -121,13 +121,12 @@
     <!-- Nav -->
     <nav class="fixed top-0 w-full z-50 bg-navy-950/95 backdrop-blur-md border-b border-white/5 transition-all" id="navbar">
         <div class="max-w-6xl mx-auto px-6 h-14 flex justify-between items-center">
-            <a href="#top" class="font-bold text-white tracking-tight no-underline text-sm">N. Es-Sebbani</a>
+            <a href="#top" class="font-bold text-white tracking-tight no-underline text-sm">N. ES-SEBBANI</a>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#parcours" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Parcours</a>
                 <a href="#competences" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Compétences</a>
                 <a href="#publications" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Publications</a>
-                <a href="#colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Colloques</a>
-                <a href="#projets" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Projets</a>
+                <a href="#colloques" class="text-[13px] text-navy-300 hover:text-white no-underline transition">Conférences</a>
                 <a href="#contact" class="text-[13px] font-semibold text-navy-950 bg-white px-5 py-1.5 hover:bg-navy-100 no-underline transition">Contact</a>
             </div>
             <button class="md:hidden" id="navToggle">
@@ -139,11 +138,8 @@
         <div class="hidden flex-col items-center gap-4 pb-5 bg-navy-950 md:hidden" id="mobileMenu">
             <a href="#parcours" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Parcours</a>
             <a href="#competences" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Compétences</a>
-            <a href="#enseignement" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Enseignement</a>
             <a href="#publications" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Publications</a>
-            <a href="#colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Colloques</a>
-            <a href="#service" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Service</a>
-            <a href="#projets" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Projets</a>
+            <a href="#colloques" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Conférences</a>
             <a href="#contact" onclick="closeMobile()" class="text-sm text-navy-200 no-underline">Contact</a>
         </div>
     </nav>
@@ -157,9 +153,9 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-white/[0.03] rounded-full"></div>
 
         <div class="max-w-6xl mx-auto px-6 py-24 md:py-32 relative z-10">
-            <div class="flex flex-col md:flex-row gap-10 items-center">
+            <div class="flex flex-col md:flex-row gap-10 items-center md:items-start">
                 <!-- Photo -->
-                <div class="w-40 h-52 bg-navy-800 border-2 border-navy-600 overflow-hidden flex-shrink-0 hero-anim-1 shadow-2xl">
+                <div class="w-60 h-[312px] bg-navy-800 border-2 border-navy-600 overflow-hidden flex-shrink-0 hero-anim-1 shadow-2xl">
                     <img src="moi_hero.png" alt="Naïm Es-Sebbani" class="w-full h-full object-cover object-center">
                 </div>
                 <!-- Text -->
@@ -171,12 +167,15 @@
                     <p class="text-navy-300 mt-5 text-base leading-relaxed max-w-xl hero-anim-3">
                         Docteur en IA (NLP &amp; LLM) et ingénieur logiciel de formation. Je conçois, entraîne et déploie des systèmes LLM/NLP de bout en bout, du pipeline de données au produit livré. Premier auteur à ICML et ACL.
                     </p>
+                    <p class="text-navy-200 mt-3 text-base font-semibold leading-relaxed max-w-xl hero-anim-3">
+                        Double casquette chercheur IA et ingénieur logiciel : un profil rare, de la recherche au produit.
+                    </p>
                     <div class="flex items-center gap-4 mt-7 flex-wrap justify-center md:justify-start hero-anim-4">
                         <a href="CV.pdf" target="_blank" class="text-[13px] font-semibold bg-white text-navy-950 px-6 py-2.5 hover:bg-navy-100 no-underline transition">Télécharger mon CV</a>
-                        <a href="mailto:naim.essebbani@gmail.com" class="text-[13px] font-semibold text-white border border-white/30 px-6 py-2.5 hover:border-white hover:bg-white/10 no-underline transition">Me contacter</a>
+                        <a href="tel:+33787259602" class="text-[13px] font-semibold text-white border border-white/30 px-6 py-2.5 hover:border-white hover:bg-white/10 no-underline transition">07 87 25 96 02</a>
                         <span class="flex items-center gap-2 text-[13px] font-semibold text-emerald-400">
                             <span class="w-2 h-2 bg-emerald-400 rounded-full pulse-dot"></span>
-                            <span>Disponible · Lille</span>
+                            <span>Disponible</span>
                         </span>
                     </div>
                 </div>
@@ -205,7 +204,7 @@
                             <h3 class="text-lg font-bold text-navy-900">Chercheur doctorant en IA</h3>
                             <p class="text-sm text-navy-400 mt-0.5">CRIL — Centre de Recherche en Informatique de Lens, Université d'Artois</p>
                             <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
-                                Conception, entraînement et évaluation de systèmes LLM/NLP de bout en bout, en autonomie — du pipeline de données aux expériences à grande échelle. Thèse « Modeling Relational Knowledge in Language, Reasoning, and Learning », dirigée par Zied Bouraoui. Labos : CRIL &amp; Grammatica · Soutenance prévue : octobre 2026.
+                                Conception, entraînement et évaluation de systèmes LLM/NLP de bout en bout, en autonomie — du pipeline de données aux expériences à grande échelle.<br/> Thèse « Modeling Relational Knowledge in Language, Reasoning, and Learning », dirigée par Zied Bouraoui. Labos : CRIL &amp; Grammatica · Soutenance prévue : octobre 2026.
                             </p>
                         </div>
                     </div>
@@ -217,8 +216,8 @@
                         </div>
                         <div class="pb-12">
                             <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-navy-500 bg-navy-100 px-3 py-1 mb-2">2021 – 2023</span>
-                            <h3 class="text-lg font-bold text-navy-900">Ingénieur logiciel en alternance · Master Ingénierie Logicielle</h3>
-                            <p class="text-sm text-navy-400 mt-0.5"><span class="font-bold text-navy-900">CGI</span> · Université d'Artois</p>
+                            <h3 class="text-lg font-bold text-navy-900">Ingénieur logiciel</h3>
+                            <p class="text-sm text-navy-400 mt-0.5"><span class="font-bold text-navy-900">CGI</span> — en parallèle du Master Ingénierie Logicielle, Université d'Artois</p>
                             <p class="text-sm text-navy-600 mt-2 leading-relaxed max-w-xl">
                                 Deux ans de contribution au développement et à la maintenance d'une application métier en production, tout en automatisant des processus récurrents pour alléger le travail des équipes.
                             </p>
@@ -342,11 +341,11 @@
                             <div class="mt-5 space-y-3">
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p class="text-sm text-navy-600">Algorithmique 2, L1 (2<sup>e</sup> semestre) — 128 heures</p>
+                                    <p class="text-sm text-navy-600">Algorithmique 2, L1</p>
                                 </div>
                                 <div class="flex items-start gap-3">
                                     <span class="w-1.5 h-1.5 rounded-full bg-navy-900 mt-1.5 shrink-0"></span>
-                                    <p class="text-sm text-navy-600">Deep Learning appliqué, M2 — 20 heures</p>
+                                    <p class="text-sm text-navy-600">Deep Learning appliqué, M2</p>
                                 </div>
                             </div>
                         </div>
@@ -382,7 +381,7 @@
                         <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ACL 2025</span>
                         <p class="text-[15px] font-bold text-navy-900 leading-snug">Modeling Complex Semantic Relations with Contrastively Fine-Tuned Relational Encoders</p>
                         <p class="text-[13px] text-navy-500 mt-1.5"><span class="font-bold text-navy-900">Naïm Es-Sebbani</span>, Esteban Marquer, Zied Bouraoui</p>
-                        <p class="text-[12px] text-navy-400 mt-0.5">63rd Annual Meeting of the ACL, pp. 20259–20288, 2025.</p>
+                        <p class="text-[12px] text-navy-400 mt-0.5">63rd Annual Meeting of the Association for Computational Linguistics, pp. 20259–20288, 2025.</p>
                     </div>
                     <div class="bg-white border-l-4 border-navy-900 p-6 mb-4 card-lift reveal">
                         <span class="inline-block text-[10px] font-bold uppercase tracking-wider bg-navy-900 text-white px-2.5 py-0.5 mb-3">ECAI 2024</span>
@@ -392,7 +391,7 @@
                     </div>
                 </div>
 
-                <p class="text-sm text-navy-500 mt-2 reveal">+ 4 articles en cours d'évaluation (<span class="italic">under review</span>).</p>
+                <p class="text-sm text-navy-500 mt-2 reveal">+ 3 articles en cours d'évaluation : 1 NeurIPS et 2 ARR (<span class="italic">under review</span>).</p>
 
                 <!-- Posters -->
                 <h3 class="text-sm font-bold text-navy-900 uppercase tracking-wider mt-16 mb-6 reveal">Posters</h3>
@@ -433,28 +432,49 @@
         <section class="py-20 bg-white" id="colloques">
             <div class="max-w-5xl mx-auto px-6">
                 <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-navy-400 mb-2 reveal">Présentations</p>
-                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Colloques &amp; Conférences</h2>
+                <h2 class="font-display text-3xl font-700 text-navy-900 mb-14 reveal">Conférences</h2>
 
                 <div class="space-y-0 divide-y divide-navy-200">
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">2026</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juil. 2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">ICML 2026 — International Conference on Machine Learning</p>
-                            <p class="text-sm text-navy-400">À venir · Présentation orale</p>
+                            <p class="text-sm text-navy-400">Séoul, Corée du Sud · Présentation orale + poster <span class="inline-block align-middle text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-navy-950 px-2 py-0.5 ml-1">Spotlight</span></p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
-                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">2026</span>
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juin 2026</span>
+                        <div>
+                            <p class="text-[15px] font-bold text-navy-900">PFIA 2026 — Plate-Forme de l'Intelligence Artificielle</p>
+                            <p class="text-sm text-navy-400">Arras, France · Co-organisateur</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Mai 2026</span>
                         <div>
                             <p class="text-[15px] font-bold text-navy-900">LREC 2026 — Language Resources and Evaluation Conference</p>
-                            <p class="text-sm text-navy-400">Présentation de poster</p>
+                            <p class="text-sm text-navy-400">Palma de Majorque, Espagne · Présentation de poster</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Nov. 2025</span>
+                        <div>
+                            <p class="text-[15px] font-bold text-navy-900">EMNLP 2025 — Conference on Empirical Methods in Natural Language Processing</p>
+                            <p class="text-sm text-navy-400">Suzhou, Chine · Participation sans communication</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
                         <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Juil. 2025</span>
                         <div>
-                            <p class="text-[15px] font-bold text-navy-900">ACL 2025 — Annual Meeting of the ACL</p>
+                            <p class="text-[15px] font-bold text-navy-900">ACL 2025 — Annual Meeting of the Association for Computational Linguistics</p>
                             <p class="text-sm text-navy-400">Vienne, Autriche · Présentation orale</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
+                        <span class="text-[13px] font-bold text-navy-900 md:w-24 shrink-0">Nov. 2024</span>
+                        <div>
+                            <p class="text-[15px] font-bold text-navy-900">EMNLP 2024 — Conference on Empirical Methods in Natural Language Processing</p>
+                            <p class="text-sm text-navy-400">Miami, États-Unis · Participation sans communication</p>
                         </div>
                     </div>
                     <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-10 py-5 reveal">
@@ -496,6 +516,10 @@
                     <div class="bg-white border border-navy-100 p-6 card-lift reveal">
                         <h3 class="text-base font-bold text-navy-900 mb-3">Organisation de réunions scientifiques</h3>
                         <div class="space-y-2">
+                            <div class="flex items-start gap-3">
+                                <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
+                                <p class="text-sm text-navy-600">Co-organisateur de <span class="font-semibold text-navy-800">PFIA 2026</span>, Plate-Forme de l'Intelligence Artificielle, Arras <span class="text-navy-400">(2026)</span></p>
+                            </div>
                             <div class="flex items-start gap-3">
                                 <span class="w-1.5 h-1.5 rounded-full bg-navy-400 mt-1.5 shrink-0"></span>
                                 <p class="text-sm text-navy-600">Co-organisation des activités scientifiques du groupe de recherche <span class="font-semibold text-navy-800">IA2</span> <span class="text-navy-400">(2025–présent)</span></p>
@@ -557,7 +581,10 @@
                 <h2 class="font-display text-3xl font-700 text-white mb-4 reveal">Travaillons ensemble</h2>
                 <p class="text-navy-300 mb-10 max-w-md mx-auto reveal">Ouvert aux opportunités en IA/ML — de la recherche au produit.</p>
 
-                <a href="mailto:naim.essebbani@gmail.com" class="inline-block text-[15px] font-bold bg-white text-navy-950 px-8 py-3.5 hover:bg-navy-100 no-underline transition reveal">naim.essebbani@gmail.com</a>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+                    <a href="mailto:naim.essebbani@gmail.com" class="inline-block text-[15px] font-bold bg-white text-navy-950 px-8 py-3.5 hover:bg-navy-100 no-underline transition">naim.essebbani@gmail.com</a>
+                    <a href="tel:+33787259602" class="inline-block text-[15px] font-bold text-white border border-white/30 px-8 py-3.5 hover:border-white hover:bg-white/10 no-underline transition">07 87 25 96 02</a>
+                </div>
 
                 <div class="flex items-center justify-center gap-6 mt-8 text-[13px] text-navy-300 reveal">
                     <a href="https://github.com/essebbaninaim" target="_blank" class="hover:text-white no-underline transition">GitHub</a>
